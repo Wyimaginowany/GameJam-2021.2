@@ -22,7 +22,11 @@ public class PlayerInput : MonoBehaviour
     {
         if (movement.magnitude >= 0.1f)
         {
-            playerMovement.MovePlayer(movement);
+            playerMovement.MovePlayer(movement.normalized);
+        }
+        else
+        {
+            playerMovement.MovePlayer(Vector3.zero);
         }
     }
 }
