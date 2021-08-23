@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] Camera camera = null;
+
     PlayerMovement playerMovement;
     Vector2 movement;
+    Vector2 mousePosition;
 
     private void Start()
     {
@@ -16,6 +19,8 @@ public class PlayerInput : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
@@ -28,5 +33,7 @@ public class PlayerInput : MonoBehaviour
         {
             playerMovement.MovePlayer(Vector3.zero);
         }
+
+        playerMovement.RotatePlayer(mousePosition);
     }
 }
