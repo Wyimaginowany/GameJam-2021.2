@@ -22,14 +22,21 @@ public class EnemyMovement : MonoBehaviour
     {
         if (enemyStats.CheckIfAlive())
         {
-            MoveToPlayer();
+            Vector2 destination = target.transform.position - transform.position;
+            MoveToPlayer(destination);
+            RotateToPlayer(destination);
         }
     }
 
-    private void MoveToPlayer()
+    private void MoveToPlayer(Vector2 destination)
     {
-        Vector2 destination = target.transform.position - transform.position;
         Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);
         rigidbody.MovePosition(currentPos + destination.normalized * enemySpeed * Time.deltaTime);
+    }
+
+    private void RotateToPlayer(Vector2 destination)
+    {
+        float angle = Mathf.Atan2(destination.y, destination.x) * Mathf.Rad2Deg - 90f;
+        rigidbody.rotation = angle;
     }
 }
