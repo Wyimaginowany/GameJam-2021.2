@@ -171,7 +171,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9154321215719608076}
-  m_Layer: 0
+  - component: {fileID: 1558652394281050335}
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,6 +205,22 @@ Transform:
   m_Father: {fileID: 7189009093792255111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1558652394281050335
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727331786854991873}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09, y: -0.64}
+  serializedVersion: 2
+  m_Radius: 0.62
 --- !u!1 &3941216290882679331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1048,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
+  circleColliders:
+  - {fileID: 3346969247741327752}
+  - {fileID: 1558652394281050335}
 --- !u!1 &9167129562615159574
 GameObject:
   m_ObjectHideFlags: 0

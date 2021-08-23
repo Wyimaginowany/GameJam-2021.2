@@ -6,14 +6,13 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField] float enemyHealth = 100f;
 
-    CircleCollider2D circleCollider;
+    [SerializeField] CircleCollider2D[] circleColliders;
     Rigidbody2D rigidbody;
     private bool isAlive = true;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        circleCollider = GetComponent<CircleCollider2D>();
     }
 
     public void HandleHit(float damage)
@@ -29,9 +28,13 @@ public class EnemyStats : MonoBehaviour
     private void HandleDeath()
     {
         isAlive = false;
-        Destroy(circleCollider);
         Destroy(rigidbody);
         Destroy(gameObject, 5f);
+
+        foreach (CircleCollider2D collider in circleColliders)
+        {
+            Destroy(collider);
+        }
     }
 
     public bool CheckIfAlive()
