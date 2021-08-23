@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shroob Override
+  m_Controller: {fileID: 9100000, guid: d9ede9e80a12c42439751a9946f2d59a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 47cb6588d031ef8469ce1d4029c7dd42, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f76a7776daea2d94cacf4c376da76a77, type: 2}

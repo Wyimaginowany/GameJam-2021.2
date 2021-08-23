@@ -7,12 +7,14 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] Camera camera = null;
 
     PlayerMovement playerMovement;
+    PlayerShooting playerShooting;
     Vector2 movement;
     Vector2 mousePosition;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        playerShooting = GetComponent<PlayerShooting>();
     }
 
     private void Update()
@@ -21,6 +23,11 @@ public class PlayerInput : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetMouseButton(0))
+        {
+            playerShooting.Shoot();
+        }
     }
 
     private void FixedUpdate()
