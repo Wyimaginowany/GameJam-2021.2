@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     [SerializeField] float enemyHealth = 100f;
+    [SerializeField] CircleCollider2D collider;
 
     private bool isAlive = true;
 
@@ -21,6 +22,7 @@ public class EnemyStats : MonoBehaviour
     private void HandleDeath()
     {
         isAlive = false;
+        Destroy(collider);
         Destroy(gameObject, 5f);
     }
 

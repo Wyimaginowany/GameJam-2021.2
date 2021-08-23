@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
+  collider: {fileID: 7841208756834476885}
 --- !u!1 &5154564341758764417
 GameObject:
   m_ObjectHideFlags: 0
