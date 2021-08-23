@@ -511,10 +511,11 @@ GameObject:
   - component: {fileID: 2640161764086539730}
   - component: {fileID: 5387030831231924607}
   - component: {fileID: 7553667717458964729}
+  - component: {fileID: 5891508716652887774}
   - component: {fileID: 4933998103255277779}
   - component: {fileID: 7080137366345071141}
   m_Layer: 9
-  m_Name: Enemy 3
+  m_Name: Necron
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,6 +573,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.06}
   serializedVersion: 2
   m_Radius: 0.44
+--- !u!95 &5891508716652887774
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922943232743880005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: ae3030c4d51c23c4c8475d544876d72b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4933998103255277779
 MonoBehaviour:
   m_ObjectHideFlags: 0

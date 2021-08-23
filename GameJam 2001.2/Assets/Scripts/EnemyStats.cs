@@ -29,12 +29,12 @@ public class EnemyStats : MonoBehaviour
     {
         isAlive = false;
         Destroy(rigidbody);
-        Destroy(gameObject, 5f);
-
         foreach (CircleCollider2D collider in circleColliders)
         {
             Destroy(collider);
         }
+
+        Destroy(gameObject, 1f);
     }
 
     public bool CheckIfAlive()

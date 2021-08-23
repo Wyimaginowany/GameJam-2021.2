@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2e1b409ea2c7ef4ba4cbf648dec56b8, type: 3}
-  m_Name: Blue Default
+  m_Name: Blue Assult
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 8896958910267327236, guid: 90b895e1412d6de41bba45d9d035ea11,
+  weaponPrefab: {fileID: 3544192963405066, guid: 4c2a5cfc811e49a41aaa0acc6be3603f,
     type: 3}
-  bulletPrefab: {fileID: 6643730351185338275, guid: bcb211ad40b6045488956f415069ff75,
+  bulletPrefab: {fileID: 5893716050210804689, guid: c4b4d5a4639ac62488912af36d6e5e52,
     type: 3}
-  damage: 25
+  damage: 50
   bulletSpeed: 20
-  fireRate: 17
+  fireRate: 9
