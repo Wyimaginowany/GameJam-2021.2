@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    //to do make it automatic
     [SerializeField] Camera camera = null;
 
+    //todo remove this from input and make it automatic
+    [SerializeField] GameObject[] traps;
+
+    GameObject selectedTrap;
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
     Vector2 movement;
     Vector2 mousePosition;
+    bool combatPhase = true;
 
     private void Start()
     {
@@ -24,13 +30,49 @@ public class PlayerInput : MonoBehaviour
 
         mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButton(0))
+        //make this automatic
+        if (Input.GetKeyDown(KeyCode.Alpha9))
         {
-            playerShooting.Shoot();
+            combatPhase = !combatPhase;
+        }
+        
+        if (combatPhase)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                playerShooting.Shoot();
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                selectedTrap = Instantiate(traps[0], transform.position, Quaternion.identity);
+            }
+            //todo remove this from input and make it automatic
+            if (selectedTrap != null)
+            {
+                selectedTrap.GetComponent<Template>().SnapToGrid(mousePosition);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    selectedTrap.GetComponent<Template>().PlaceTrap();
+                }
+            }
+
+            
         }
     }
 
     private void FixedUpdate()
+    {
+        if (combatPhase)
+        {
+            ApplyPlayerMovement();
+            playerMovement.RotatePlayer(mousePosition);
+        }
+    }
+
+    private void ApplyPlayerMovement()
     {
         if (movement.magnitude >= 0.1f)
         {
@@ -40,7 +82,5 @@ public class PlayerInput : MonoBehaviour
         {
             playerMovement.MovePlayer(Vector3.zero);
         }
-
-        playerMovement.RotatePlayer(mousePosition);
     }
 }
