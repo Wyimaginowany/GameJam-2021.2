@@ -44,7 +44,7 @@ public class MovingTurret : MonoBehaviour
         movingParts.transform.position = startingPos + offset;
     }
 
-    public void Shoot()
+    private void Shoot()
     {
 
         if (Time.time - lastFired > 1 / fireRate)
