@@ -7,7 +7,9 @@ public class Template : MonoBehaviour
     [SerializeField] GameObject finalObject;
     [SerializeField] LayerMask trapsLayer;
     [SerializeField] int gridSize = 3;
+    [SerializeField] GameObject objectsToRotate;
 
+    float rotation = 0f;
 
     public void PlaceTrap()
     {
@@ -15,7 +17,7 @@ public class Template : MonoBehaviour
 
         if (rayHit.collider == null)
         {
-            Instantiate(finalObject, transform.position, Quaternion.identity);
+            Instantiate(finalObject, transform.position, objectsToRotate.transform.rotation);
             Destroy(gameObject);
         }
     }
@@ -25,6 +27,12 @@ public class Template : MonoBehaviour
         transform.position = new Vector2(
             Mathf.RoundToInt(mousePosition.x / gridSize) * gridSize,
             Mathf.RoundToInt(mousePosition.y / gridSize) * gridSize);
+    }
+
+    public void Rotate()
+    {
+        rotation -= 90f;
+        objectsToRotate.transform.localRotation = Quaternion.Euler(0f, 0f, rotation);
     }
 
 }

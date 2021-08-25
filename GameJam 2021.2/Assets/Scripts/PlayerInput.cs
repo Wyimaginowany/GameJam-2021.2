@@ -30,7 +30,7 @@ public class PlayerInput : MonoBehaviour
 
         mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
 
-        //make this automatic
+        //make this automatic (shop)
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             combatPhase = !combatPhase;
@@ -45,21 +45,24 @@ public class PlayerInput : MonoBehaviour
         }
         else
         {
+            //todo remove this from input and make it automatic (shop)
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 selectedTrap = Instantiate(traps[0], transform.position, Quaternion.identity);
             }
-            //todo remove this from input and make it automatic
+            
             if (selectedTrap != null)
             {
                 selectedTrap.GetComponent<Template>().SnapToGrid(mousePosition);
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    selectedTrap.GetComponent<Template>().Rotate();
+                }
                 if (Input.GetMouseButtonDown(0))
                 {
                     selectedTrap.GetComponent<Template>().PlaceTrap();
                 }
-            }
-
-            
+            }           
         }
     }
 
