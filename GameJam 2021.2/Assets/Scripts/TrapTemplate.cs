@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Template : MonoBehaviour
+public class TrapTemplate : MonoBehaviour
 {
     [SerializeField] GameObject finalObject;
     [SerializeField] LayerMask trapsLayer;

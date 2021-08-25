@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
     //todo remove this from input and make it automatic
     [SerializeField] GameObject[] traps;
 
-    GameObject selectedTrap;
+    GameObject selectedTrap = null;
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
     Vector2 movement;
@@ -48,19 +48,26 @@ public class PlayerInput : MonoBehaviour
             //todo remove this from input and make it automatic (shop)
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
+                Destroy(selectedTrap);
                 selectedTrap = Instantiate(traps[0], transform.position, Quaternion.identity);
             }
-            
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Destroy(selectedTrap);
+                selectedTrap = Instantiate(traps[1], transform.position, Quaternion.identity);
+            }
+
             if (selectedTrap != null)
             {
-                selectedTrap.GetComponent<Template>().SnapToGrid(mousePosition);
+                selectedTrap.GetComponent<TrapTemplate>().SnapToGrid(mousePosition);
+                //this can stay i think (only minor changes)
                 if (Input.GetKeyDown(KeyCode.R))
                 {
-                    selectedTrap.GetComponent<Template>().Rotate();
+                    selectedTrap.GetComponent<TrapTemplate>().Rotate();
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
-                    selectedTrap.GetComponent<Template>().PlaceTrap();
+                    selectedTrap.GetComponent<TrapTemplate>().PlaceTrap();
                 }
             }           
         }
