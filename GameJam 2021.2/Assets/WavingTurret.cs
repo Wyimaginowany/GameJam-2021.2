@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class WavingTurret : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] float wavingPeriod = 10f;
     [SerializeField] float fireRate;
     [SerializeField] float bulletSpeed;
     [SerializeField] float damage;
     [SerializeField] float startingAngle;
+
+    [Header("To Attach")]
     [SerializeField] GameObject movingParts;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;

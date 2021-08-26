@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SpinningTurret : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] float spiningSpeed = 200f;
     [SerializeField] float fireRate;
     [SerializeField] float bulletSpeed;
     [SerializeField] float damage;
+
+    [Header("To Attach")]
     [SerializeField] GameObject movingParts;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;

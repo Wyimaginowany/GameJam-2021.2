@@ -5,11 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New weapon", menuName = "Weapon")]
 public class Weapon : ScriptableObject
 {
-    public GameObject weaponPrefab;
-    public GameObject bulletPrefab;
+    [Header("Settings")]
     public float damage;
     public float bulletSpeed;
     public float fireRate;
+
+    [Header("To Attach")]
+    public GameObject weaponPrefab;
+    public GameObject bulletPrefab;
 
     public void SpawnWeapon(Transform hand)
     {

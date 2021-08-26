@@ -7,6 +7,8 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] float enemyHealth = 100f;
 
     [SerializeField] CircleCollider2D[] circleColliders;
+
+
     Rigidbody2D rigidbody;
     private bool isAlive = true;
 

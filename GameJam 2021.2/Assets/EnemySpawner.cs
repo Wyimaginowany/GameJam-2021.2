@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public enum SpawnState {SPAWNING, WAITING, COUNTING};
+    private enum SpawnState {SPAWNING, COUNTING};
+
+    [SerializeField] Wave[] waves;
+    [Space(10)]
+    [SerializeField] Transform[] spawnPoints;
+    [Space(10)]
+    [SerializeField] float timeBetweenWaves = 5f;
+
+    private int nextWaveIndex = 0;
+    private float waveCountdown;
+    private SpawnState spawnState = SpawnState.COUNTING;
 
     [System.Serializable]
     public class Wave
     {
         public Transform enemyPrefab;
-        public int count;
+        public int amount;
         public float spawnRate;
     }
-
-    public Wave[] waves;
-    public Transform[] spawnPoints;
-    private int nextWave = 0;
-    public float timeBetweenWaves = 5f;
-    private float waveCountdown;
-    private SpawnState spawnState = SpawnState.COUNTING;
 
     private void Start()
     {
@@ -28,14 +31,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (waveCountdown <= 0)
+        if (waveCountdown <= 0 && spawnState != SpawnState.SPAWNING)
         {
-            if (spawnState != SpawnState.SPAWNING)
-            {
-                StartCoroutine(SpawnWave(waves[nextWave]));
-            }
+            StartCoroutine(SpawnWave(waves[nextWaveIndex]));
         }
-        else
+        else if (waveCountdown > 0)
         {
             waveCountdown -= Time.deltaTime;
         }
@@ -45,29 +45,29 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnState = SpawnState.SPAWNING;
 
-        for (int i = 0; i < wave.count; i++)
+        for (int i = 0; i < wave.amount; i++)
         {
             SpawnEnemy(wave.enemyPrefab);
             yield return new WaitForSeconds(1f / wave.spawnRate);
         }
 
-        WaveCompleated();
+        WaveCompleted();
         yield break;
     }
 
-    void WaveCompleated()
+    void WaveCompleted()
     {
         spawnState = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
-        if (nextWave + 1 > waves.Length - 1)
+        if (nextWaveIndex + 1 > waves.Length - 1)
         {
-            nextWave = 0;
+            nextWaveIndex = 0;
             Debug.Log("ALL WAVES COMPLEATE");
         }
         else
         {
-            nextWave++;
+            nextWaveIndex++;
         }
 
     }

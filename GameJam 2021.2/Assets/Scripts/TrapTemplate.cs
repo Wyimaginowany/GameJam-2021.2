@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TrapTemplate : MonoBehaviour
 {
-    [SerializeField] GameObject finalObject;
+    [Header("Settings")]
     [SerializeField] LayerMask trapsLayer;
     [SerializeField] int gridSize = 3;
+
+    [Header("To Attach")]
+    [SerializeField] GameObject finalObject;
     [SerializeField] GameObject objectsToRotate;
 
     float rotation = 0f;

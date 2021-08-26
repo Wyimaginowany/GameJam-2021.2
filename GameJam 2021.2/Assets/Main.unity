@@ -5967,15 +5967,15 @@ MonoBehaviour:
   waves:
   - enemyPrefab: {fileID: 4916833991382234259, guid: 927da502ce261c145ba2abc34ecf06b3,
       type: 3}
-    count: 5
-    spawnRate: 2
+    amount: 3
+    spawnRate: 10
   - enemyPrefab: {fileID: 2437770908431247919, guid: 79c551c9dda375243a203ed08b882100,
       type: 3}
-    count: 3
+    amount: 4
     spawnRate: 1
   - enemyPrefab: {fileID: 2640161764086539730, guid: e276ed3af7bd55a41abe2c189a092c10,
       type: 3}
-    count: 5
+    amount: 5
     spawnRate: 1
   spawnPoints:
   - {fileID: 860710984}

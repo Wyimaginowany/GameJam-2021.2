@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BouncingSaw : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] float spiningSpeed = 330;
     [SerializeField] float randomFactor = 0.2f;
     [SerializeField] Vector2 startForce = new Vector2(5f, 3f);
 
+    [Header("To Attach")]
     [SerializeField] GameObject sawGFX;
 
     Rigidbody2D rigidbody;

@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class MovingTurret : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] float movingSpeed = 200f;
     [SerializeField] float fireRate;
     [SerializeField] float bulletSpeed;
     [SerializeField] float damage;
+    [SerializeField] float period = 3f;
+    [SerializeField] Vector3 movementVector;
+
+    [Header("To Attach")]
     [SerializeField] GameObject movingParts;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform[] firePoints;
     
-
-    [SerializeField] Vector3 movementVector;
-    [SerializeField] float period = 3f;
-
     bool left = true;
     float lastFired = 0f;
     float movementFactor;
