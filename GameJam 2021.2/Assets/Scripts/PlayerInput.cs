@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+
     //to do make it automatic
     [SerializeField] Camera camera = null;
 
     //todo remove this from input and make it automatic
     [SerializeField] GameObject[] traps;
 
+    GameManager gameManager;
     GameObject selectedTrap = null;
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
     Vector2 movement;
     Vector2 mousePosition;
-    bool combatPhase = true;
 
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponent<PlayerShooting>();
     }
@@ -30,20 +32,22 @@ public class PlayerInput : MonoBehaviour
 
         mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
 
-        //make this automatic (wave system)
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (gameManager.GetCurrentState() == GameState.WaitingPhase)
         {
-            combatPhase = !combatPhase;
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                gameManager.SetState(GameState.CombatPhase);
+            }
         }
-        
-        if (combatPhase)
+
+        if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {
             if (Input.GetMouseButton(0))
             {
                 playerShooting.Shoot();
             }
         }
-        else
+        else if (gameManager.GetCurrentState() == GameState.BuildPhase)
         {
             //todo remove this from input and make it automatic (shop)
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -75,7 +79,7 @@ public class PlayerInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (combatPhase)
+        if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {
             ApplyPlayerMovement();
             playerMovement.RotatePlayer(mousePosition);

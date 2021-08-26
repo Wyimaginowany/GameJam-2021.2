@@ -10,11 +10,13 @@ public class EnemySpawner : MonoBehaviour
     [Space(10)]
     [SerializeField] Transform[] spawnPoints;
     [Space(10)]
-    [SerializeField] float timeBetweenWaves = 5f;
+    [SerializeField] float timeBetweenWaves = 2f;
 
     private int nextWaveIndex = 0;
     private float waveCountdown;
     private SpawnState spawnState = SpawnState.COUNTING;
+    GameManager gameManager;
+    bool spawnerEmpty = false;
 
     [System.Serializable]
     public class Wave
@@ -26,16 +28,20 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         waveCountdown = timeBetweenWaves;
     }
 
     private void Update()
     {
-        if (waveCountdown <= 0 && spawnState != SpawnState.SPAWNING)
+        if (waveCountdown <= 0)
         {
-            StartCoroutine(SpawnWave(waves[nextWaveIndex]));
+            if (spawnState != SpawnState.SPAWNING && !spawnerEmpty)
+            {
+                StartCoroutine(SpawnWave(waves[nextWaveIndex]));
+            }
         }
-        else if (waveCountdown > 0)
+        else if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {
             waveCountdown -= Time.deltaTime;
         }
@@ -62,8 +68,8 @@ public class EnemySpawner : MonoBehaviour
 
         if (nextWaveIndex + 1 > waves.Length - 1)
         {
-            nextWaveIndex = 0;
-            Debug.Log("ALL WAVES COMPLEATE");
+            gameManager.spawnerDrained();
+            spawnerEmpty = true;
         }
         else
         {
