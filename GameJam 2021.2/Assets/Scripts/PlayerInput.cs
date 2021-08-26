@@ -30,7 +30,7 @@ public class PlayerInput : MonoBehaviour
 
         mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
 
-        //make this automatic (shop)
+        //make this automatic (wave system)
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             combatPhase = !combatPhase;
