@@ -5,21 +5,21 @@ using TMPro;
 
 public class ShopLogic : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] int refreshPrice;
+    [SerializeField] int startingMoneyAmount = 100;
+
     [Header("To Attach")]
     [SerializeField] PlayerInput playerInput;
-    [SerializeField] GameObject[] trapsTepmplates;
-    [SerializeField] int refreshPrice;
     [SerializeField] TMP_Text moneyAmountText;
     [SerializeField] TMP_Text refreshPriceText;
+    [SerializeField] GameObject[] trapsTepmplates;
+    [Space(10)]
     [SerializeField] GameObject[] redeemedSlots;
 
-    //remopve serializefield
-    [SerializeField] int startingMoneyAmount = 100;
-    [SerializeField] int curretMoneyAmount;
-    [SerializeField] GameObject[] chosenTraps;
-    [SerializeField] GameObject[] shopSlots;
-
-
+    int curretMoneyAmount;
+    GameObject[] chosenTraps;
+    GameObject[] shopSlots;
     GameManager gameManager;
 
     void Start()

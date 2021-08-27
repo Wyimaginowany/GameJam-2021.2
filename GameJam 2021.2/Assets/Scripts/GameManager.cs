@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    [SerializeField] GameObject shopUI;
+    [Header("Settings")]
     [SerializeField] int spawnersLeft;
     [SerializeField] int currentStage = 0;
+
+    [Header("To Attach")]
+    [SerializeField] GameObject shopUI;
 
     GameState currentGameState = GameState.WaitingPhase;
     bool spawnersEmpty = false;
@@ -51,16 +53,6 @@ public class GameManager : MonoBehaviour
         }
         return;
     }
-
-    public void SetState(GameState newGameState)
-    {
-        currentGameState = newGameState;
-    }
-
-    public GameState GetCurrentState()
-    {
-        return currentGameState;
-    }
     
     public void spawnerDrained()
     {
@@ -84,4 +76,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetState(GameState newGameState)
+    {
+        currentGameState = newGameState;
+    }
+
+    public GameState GetCurrentState()
+    {
+        return currentGameState;
+    }
 }
