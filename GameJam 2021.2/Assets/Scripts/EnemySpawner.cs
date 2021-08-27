@@ -70,6 +70,7 @@ public class EnemySpawner : MonoBehaviour
         {
             spawnerEmpty = true;
             gameManager.spawnerDrained();
+            Destroy(gameObject);
         }
         else
         {

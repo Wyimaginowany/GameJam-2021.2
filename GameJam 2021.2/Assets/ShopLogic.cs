@@ -72,5 +72,6 @@ public class ShopLogic : MonoBehaviour
     {
         gameObject.SetActive(false);
         gameManager.SetState(GameState.CombatPhase);
+        gameManager.StartNextStage();
     }
 }

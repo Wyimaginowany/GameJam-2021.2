@@ -6,15 +6,25 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField] GameObject shopUI;
+    [SerializeField] int spawnersLeft;
+    [SerializeField] int currentStage = 0;
 
     GameState currentGameState = GameState.WaitingPhase;
     bool spawnersEmpty = false;
-
     float searchCountdown = 1f;
+
+
+    [System.Serializable]
+    public class GameStages
+    {
+        public GameObject[] enemySpawners;
+    }
+    public GameStages[] gameStages;
 
     private void Awake()
     {
         gameObject.name = "GameManager";
+        spawnersLeft = gameStages[0].enemySpawners.Length;
     }
 
     private void Update()
@@ -33,11 +43,10 @@ public class GameManager : MonoBehaviour
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 SetState(GameState.BuildPhase);
-                //add shop mechanics here
-                //stop all traps (should stop automaticly when changes Phase)
                 //move player to center
                 shopUI.GetComponent<ShopLogic>().DrawRandomTraps();
                 shopUI.SetActive(true);
+                spawnersEmpty = false;
             }
         }
         return;
@@ -55,7 +64,24 @@ public class GameManager : MonoBehaviour
     
     public void spawnerDrained()
     {
-        spawnersEmpty = true;
+        spawnersLeft--;
+        if (spawnersLeft <= 0)
+        {
+            spawnersEmpty = true;
+        }
+    }
+
+    public void StartNextStage()
+    {
+        currentStage++;
+        if (currentStage <= gameStages.Length)
+        {
+            spawnersLeft = gameStages[currentStage].enemySpawners.Length;
+            foreach (GameObject spawner in gameStages[currentStage].enemySpawners)
+            {
+                spawner.SetActive(true);
+            }
+        }
     }
 
 }
