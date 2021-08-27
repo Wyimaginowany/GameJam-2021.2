@@ -16,10 +16,13 @@ public class ShopLogic : MonoBehaviour
     [SerializeField] GameObject[] trapsTepmplates;
     [Space(10)]
     [SerializeField] GameObject[] redeemedSlots;
+    [Space(10)]
+    [SerializeField] GameObject[] chosenTraps;
+    [Space(10)]
+    [SerializeField] GameObject[] shopSlots;
+
 
     int curretMoneyAmount;
-    GameObject[] chosenTraps;
-    GameObject[] shopSlots;
     GameManager gameManager;
 
     void Start()
@@ -27,7 +30,6 @@ public class ShopLogic : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         curretMoneyAmount = startingMoneyAmount;
         refreshPriceText.text = refreshPrice.ToString();
-        chosenTraps = new GameObject[4];
     }
 
     private void Update()

@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     public void StartNextStage()
     {
         currentStage++;
-        if (currentStage <= gameStages.Length)
+        if (currentStage <= gameStages.Length - 1)
         {
             spawnersLeft = gameStages[currentStage].enemySpawners.Length;
             foreach (GameObject spawner in gameStages[currentStage].enemySpawners)
