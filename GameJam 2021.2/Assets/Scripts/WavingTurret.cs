@@ -16,18 +16,23 @@ public class WavingTurret : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
 
+    GameManager gameManager;
     float lastFired = 0f;
     float movementFactor;
 
     private void Start()
     {
         startingAngle = transform.rotation.eulerAngles.z;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Update()
     {
-        Wave();
-        Shoot();
+        if (gameManager.GetCurrentState() == GameState.CombatPhase)
+        {
+            Wave();
+            Shoot();
+        }
     }
 
     private void Shoot()

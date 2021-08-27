@@ -8,8 +8,7 @@ public class PlayerInput : MonoBehaviour
     //to do make it automatic
     [SerializeField] Camera camera = null;
 
-    //todo remove this from input and make it automatic
-    [SerializeField] GameObject[] traps;
+    [SerializeField] GameObject shop;
 
     GameManager gameManager;
     GameObject selectedTrap = null;
@@ -49,18 +48,6 @@ public class PlayerInput : MonoBehaviour
         }
         else if (gameManager.GetCurrentState() == GameState.BuildPhase)
         {
-            //todo remove this from input and make it automatic (shop)
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                Destroy(selectedTrap);
-                selectedTrap = Instantiate(traps[0], transform.position, Quaternion.identity);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                Destroy(selectedTrap);
-                selectedTrap = Instantiate(traps[1], transform.position, Quaternion.identity);
-            }
-
             if (selectedTrap != null)
             {
                 selectedTrap.GetComponent<TrapTemplate>().SnapToGrid(mousePosition);
@@ -71,7 +58,7 @@ public class PlayerInput : MonoBehaviour
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
-                    selectedTrap.GetComponent<TrapTemplate>().PlaceTrap();
+                    selectedTrap.GetComponent<TrapTemplate>().PlaceTrap(shop);
                 }
             }           
         }
@@ -96,5 +83,11 @@ public class PlayerInput : MonoBehaviour
         {
             playerMovement.MovePlayer(Vector3.zero);
         }
+    }
+
+    public void SelectTrap(GameObject trapTemplate)
+    {
+        Destroy(selectedTrap);
+        selectedTrap = Instantiate(trapTemplate, transform.position, Quaternion.identity);
     }
 }

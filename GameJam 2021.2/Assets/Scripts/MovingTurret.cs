@@ -16,7 +16,8 @@ public class MovingTurret : MonoBehaviour
     [SerializeField] GameObject movingParts;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform[] firePoints;
-    
+
+    GameManager gameManager;
     bool left = true;
     float lastFired = 0f;
     float movementFactor;
@@ -24,13 +25,17 @@ public class MovingTurret : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         startingPos = movingParts.transform.position;
     }
 
     void Update()
     {
-        MoveTurret();
-        Shoot();
+        if (gameManager.GetCurrentState() == GameState.CombatPhase)
+        {
+            Shoot();
+            MoveTurret();
+        }
     }
 
     private void MoveTurret()

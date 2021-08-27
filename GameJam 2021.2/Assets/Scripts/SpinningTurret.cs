@@ -15,12 +15,21 @@ public class SpinningTurret : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
 
+    GameManager gameManager;
     float lastFired = 0f;
+
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     private void Update()
     {
-        movingParts.transform.Rotate(new Vector3(0f, 0f, spiningSpeed) * Time.deltaTime);
-        Shoot();
+        if (gameManager.GetCurrentState() == GameState.CombatPhase)
+        {
+            movingParts.transform.Rotate(new Vector3(0f, 0f, spiningSpeed) * Time.deltaTime);
+            Shoot();
+        }
     }
 
     private void Shoot()

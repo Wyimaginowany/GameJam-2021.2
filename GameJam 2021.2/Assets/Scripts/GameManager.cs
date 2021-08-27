@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameState currentGameState = GameState.WaitingPhase;
-    [SerializeField] bool spawnersEmpty = false;
 
-    private float searchCountdown = 1f;
+    [SerializeField] GameObject shopUI;
+
+    GameState currentGameState = GameState.WaitingPhase;
+    bool spawnersEmpty = false;
+
+    float searchCountdown = 1f;
 
     private void Awake()
     {
@@ -25,11 +28,16 @@ public class GameManager : MonoBehaviour
     void EnemyIsAlive()
     {
         searchCountdown -= Time.deltaTime;
-        if (searchCountdown <= 0)
+        if (searchCountdown <= 0 && currentGameState != GameState.BuildPhase)
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 SetState(GameState.BuildPhase);
+                //add shop mechanics here
+                //stop all traps (should stop automaticly when changes Phase)
+                //move player to center
+                shopUI.GetComponent<ShopLogic>().DrawRandomTraps();
+                shopUI.SetActive(true);
             }
         }
         return;

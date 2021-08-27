@@ -68,8 +68,8 @@ public class EnemySpawner : MonoBehaviour
 
         if (nextWaveIndex + 1 > waves.Length - 1)
         {
-            gameManager.spawnerDrained();
             spawnerEmpty = true;
+            gameManager.spawnerDrained();
         }
         else
         {
