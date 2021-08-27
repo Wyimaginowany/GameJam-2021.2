@@ -5,19 +5,17 @@ using TMPro;
 
 public class ShopLogic : MonoBehaviour
 {
-    [Header("To Attach")]
     [SerializeField] PlayerInput playerInput;
     [SerializeField] GameObject[] trapsTepmplates;
     [SerializeField] int refreshPrice;
     [SerializeField] TMP_Text moneyAmountText;
     [SerializeField] TMP_Text refreshPriceText;
-    [SerializeField] GameObject[] redeemedSlots;
 
     //remopve serializefield
     [SerializeField] int startingMoneyAmount = 100;
     [SerializeField] int curretMoneyAmount;
     [SerializeField] GameObject[] chosenTraps;
-    [SerializeField] GameObject[] shopSlots;
+    [SerializeField] ShopSlot[] shopSlots;
 
 
     GameManager gameManager;
@@ -40,9 +38,7 @@ public class ShopLogic : MonoBehaviour
         {
             chosenTraps[i] = trapsTepmplates[Random.Range(0, trapsTepmplates.Length)];
             TrapTemplate selectedTemplate = chosenTraps[i].GetComponent<TrapTemplate>();
-            shopSlots[i].GetComponent<ShopSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice());
-            redeemedSlots[i].SetActive(false);
-            shopSlots[i].SetActive(true);
+            shopSlots[i].CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice());
         }
     }
 
@@ -63,8 +59,6 @@ public class ShopLogic : MonoBehaviour
             curretMoneyAmount -= price;
             playerInput.SelectTrap(chosenTraps[slot]);
             gameObject.SetActive(false);
-            shopSlots[slot].SetActive(false);
-            redeemedSlots[slot].SetActive(true);
         }
     }
 

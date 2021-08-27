@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    private enum SpawnState {SPAWNING, COUNTING};
 
     [SerializeField] Wave[] waves;
     [Space(10)]
@@ -11,14 +12,11 @@ public class EnemySpawner : MonoBehaviour
     [Space(10)]
     [SerializeField] float timeBetweenWaves = 2f;
 
-    private bool spawning = false;
-    private enum SpawnState {SPAWNING, COUNTING};
     private int nextWaveIndex = 0;
     private float waveCountdown;
     private SpawnState spawnState = SpawnState.COUNTING;
     GameManager gameManager;
     bool spawnerEmpty = false;
-    bool isSpawning = false;
 
     [System.Serializable]
     public class Wave
@@ -32,19 +30,13 @@ public class EnemySpawner : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         waveCountdown = timeBetweenWaves;
-        StartSpawner();
-    }
-
-    public void StartSpawner()
-    {
-        isSpawning = true;
     }
 
     private void Update()
     {
         if (waveCountdown <= 0)
         {
-            if (spawnState != SpawnState.SPAWNING && !spawnerEmpty && isSpawning)
+            if (spawnState != SpawnState.SPAWNING && !spawnerEmpty)
             {
                 StartCoroutine(SpawnWave(waves[nextWaveIndex]));
             }
@@ -77,8 +69,7 @@ public class EnemySpawner : MonoBehaviour
         if (nextWaveIndex + 1 > waves.Length - 1)
         {
             spawnerEmpty = true;
-            Destroy(gameObject);
-            //gameManager.spawnerDrained();
+            gameManager.spawnerDrained();
         }
         else
         {
