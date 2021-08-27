@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Settings")]
+    float searchCountdown = 1f;
 
+    [Header("To Attach")]
     [SerializeField] GameObject shopUI;
 
     GameState currentGameState = GameState.WaitingPhase;
+    int currentStageIndex = 0;
     bool spawnersEmpty = false;
 
-    float searchCountdown = 1f;
+    [System.Serializable]
+    public class GameStages
+    {
+        public GameObject[] enemySpawners;
+    }
+    public GameStages[] gameStages;
 
     private void Awake()
     {
@@ -21,11 +30,11 @@ public class GameManager : MonoBehaviour
     {
         if (spawnersEmpty)
         {
-            EnemyIsAlive();
+            CheckIfEnemyAlive();
         }
     }
 
-    void EnemyIsAlive()
+    void CheckIfEnemyAlive()
     {
         searchCountdown -= Time.deltaTime;
         if (searchCountdown <= 0 && currentGameState != GameState.BuildPhase)
@@ -33,11 +42,10 @@ public class GameManager : MonoBehaviour
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 SetState(GameState.BuildPhase);
-                //add shop mechanics here
-                //stop all traps (should stop automaticly when changes Phase)
                 //move player to center
                 shopUI.GetComponent<ShopLogic>().DrawRandomTraps();
                 shopUI.SetActive(true);
+                spawnersEmpty = false;
             }
         }
         return;
@@ -52,10 +60,13 @@ public class GameManager : MonoBehaviour
     {
         return currentGameState;
     }
-    
+
     public void spawnerDrained()
     {
+        if (gameStages[currentStageIndex].enemySpawners.Length == 1)
+        {
         spawnersEmpty = true;
+        }
     }
 
 }
