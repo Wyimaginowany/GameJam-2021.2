@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField] int spawnersLeft;
-    [SerializeField] int currentStage = 0;
-
     [Header("To Attach")]
     [SerializeField] GameObject shopUI;
 
+    int currentStage = 0;
+    int spawnersLeft;
     GameState currentGameState = GameState.WaitingPhase;
     bool spawnersEmpty = false;
     float searchCountdown = 1f;
