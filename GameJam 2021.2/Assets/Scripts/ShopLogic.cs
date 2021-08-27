@@ -27,6 +27,7 @@ public class ShopLogic : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         curretMoneyAmount = startingMoneyAmount;
         refreshPriceText.text = refreshPrice.ToString();
+        chosenTraps = new GameObject[4];
     }
 
     private void Update()
