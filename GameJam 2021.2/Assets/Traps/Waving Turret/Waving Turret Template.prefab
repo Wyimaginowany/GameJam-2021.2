@@ -215,6 +215,7 @@ MonoBehaviour:
   finalObject: {fileID: 4310899223028015938, guid: 616f4b8d6316c6a44a11b6e69df61550,
     type: 3}
   objectsToRotate: {fileID: 7608587968076160240}
+  trapIcon: {fileID: 305766659310059391, guid: 9956382d0d3df9d42a877afc433df48a, type: 3}
 --- !u!1 &5092631547865299995
 GameObject:
   m_ObjectHideFlags: 0

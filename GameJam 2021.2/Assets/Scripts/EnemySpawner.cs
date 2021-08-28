@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     [System.Serializable]
     public class Wave
     {
-        public Transform enemyPrefab;
+        public GameObject enemyPrefab;
         public int amount;
         public float spawnRate;
     }
@@ -79,10 +79,10 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    void SpawnEnemy(Transform enemy)
+    void SpawnEnemy(GameObject enemy)
     {
         Transform randomSpawn = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(enemy, randomSpawn.position, randomSpawn.rotation);
+        GameObject enemySpawned = Instantiate(enemy, randomSpawn.position, randomSpawn.rotation);
     }
 
 }

@@ -329,3 +329,4 @@ MonoBehaviour:
   finalObject: {fileID: 8157441076167941365, guid: b02793c19c239da448a19fffc80a9029,
     type: 3}
   objectsToRotate: {fileID: 7421036170974221720}
+  trapIcon: {fileID: 305766659310059391, guid: b28d351314608a945aeac33d6b083f58, type: 3}

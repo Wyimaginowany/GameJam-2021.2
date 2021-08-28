@@ -13,6 +13,7 @@ public class TrapTemplate : MonoBehaviour
     [Header("To Attach")]
     [SerializeField] GameObject finalObject;
     [SerializeField] GameObject objectsToRotate;
+    [SerializeField] GameObject trapIcon;
 
     float rotation = 0f;
 
@@ -49,5 +50,10 @@ public class TrapTemplate : MonoBehaviour
     public int GetTrapPrice()
     {
         return trapPrice;
+    }
+
+    public GameObject GetTrapIcon()
+    {
+        return trapIcon;
     }
 }

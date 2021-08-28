@@ -8,6 +8,7 @@ public class ShopLogic : MonoBehaviour
     [Header("Settings")]
     [SerializeField] int refreshPrice;
     [SerializeField] int startingMoneyAmount = 100;
+    [SerializeField] int refreshDiscount = 15;
 
     [Header("To Attach")]
     [SerializeField] PlayerInput playerInput;
@@ -21,7 +22,7 @@ public class ShopLogic : MonoBehaviour
     [Space(10)]
     [SerializeField] GameObject[] shopSlots;
 
-
+    int currentRefreshPrice;
     int curretMoneyAmount;
     GameManager gameManager;
 
@@ -29,12 +30,14 @@ public class ShopLogic : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         curretMoneyAmount = startingMoneyAmount;
-        refreshPriceText.text = refreshPrice.ToString();
+        currentRefreshPrice = refreshPrice;
+        refreshPriceText.text = currentRefreshPrice.ToString() + "$";
+        DrawRandomTraps();
     }
 
     private void Update()
     {
-        moneyAmountText.text = curretMoneyAmount.ToString();
+        moneyAmountText.text = curretMoneyAmount.ToString() + "$";
     }
 
     public void DrawRandomTraps()
@@ -43,7 +46,7 @@ public class ShopLogic : MonoBehaviour
         {
             chosenTraps[i] = trapsTepmplates[Random.Range(0, trapsTepmplates.Length)];
             TrapTemplate selectedTemplate = chosenTraps[i].GetComponent<TrapTemplate>();
-            shopSlots[i].GetComponent<ShopSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice());
+            shopSlots[i].GetComponent<ShopSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice(), selectedTemplate.GetTrapIcon());
             redeemedSlots[i].SetActive(false);
             shopSlots[i].SetActive(true);
         }
@@ -51,10 +54,12 @@ public class ShopLogic : MonoBehaviour
 
     public void RefreshShop()
     {
-        if (curretMoneyAmount >= refreshPrice)
+        if (curretMoneyAmount >= currentRefreshPrice)
         {
             DrawRandomTraps();
-            curretMoneyAmount -= refreshPrice;
+            curretMoneyAmount -= currentRefreshPrice;
+            currentRefreshPrice = refreshPrice;
+            refreshPriceText.text = currentRefreshPrice.ToString() + "$";
         }
     }
 
@@ -66,8 +71,23 @@ public class ShopLogic : MonoBehaviour
             curretMoneyAmount -= price;
             playerInput.SelectTrap(chosenTraps[slot]);
             gameObject.SetActive(false);
-            shopSlots[slot].SetActive(false);
+            shopSlots[slot].GetComponent<ShopSlot>().HideTrap();
             redeemedSlots[slot].SetActive(true);
+            ApplyRefreshDiscount();
+        }
+    }
+
+    private void ApplyRefreshDiscount()
+    {
+        if (currentRefreshPrice - refreshDiscount >= 0)
+        {
+            currentRefreshPrice -= refreshDiscount;
+            refreshPriceText.text = currentRefreshPrice.ToString() + "$";
+        }
+        else
+        {
+            currentRefreshPrice = 0;
+            refreshPriceText.text = currentRefreshPrice.ToString() + "$";
         }
     }
 

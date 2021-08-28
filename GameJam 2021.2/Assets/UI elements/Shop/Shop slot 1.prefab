@@ -249,6 +249,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretNameText: {fileID: 2823019439445071889}
   turretPriceText: {fileID: 5041058952327778186}
+  trapIconSpawn: {fileID: 2042438700411273058}
+  canvas: {fileID: 0}
+  objectsToHide:
+  - {fileID: 6767970039247888673}
+  - {fileID: 695841225466090677}
 --- !u!1 &1610774449106381330
 GameObject:
   m_ObjectHideFlags: 0

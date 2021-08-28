@@ -933,9 +933,8 @@ MonoBehaviour:
   moneyAmountText: {fileID: 6208947252832120082}
   refreshPriceText: {fileID: 1109123848473684517}
   trapsTepmplates:
-  - {fileID: 8278215329540218725, guid: 77b27178237bc634bb7974ffb5c7b2d5, type: 3}
-  - {fileID: 8157441076167941365, guid: a008718340ae48841a0d596ee381ae6a, type: 3}
   - {fileID: 4310899223028015938, guid: 9313544499caf3a45b97ecaa83c4c6b1, type: 3}
+  - {fileID: 8157441076167941365, guid: a008718340ae48841a0d596ee381ae6a, type: 3}
   redeemedSlots:
   - {fileID: 28933312650984183}
   - {fileID: 4163220609775122747}
@@ -1173,7 +1172,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6194048789596625862}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2968757073289250475}
+        m_MethodName: StartTheGameAlready
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8054207298014847879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,11 +1550,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop slot 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2968757073289250475}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7112488789383344741, guid: 547a54bed9a63784194676f98cd6ef50,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8300431676177268819, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 2427507584183925478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547a54bed9a63784194676f98cd6ef50, type: 3}
 --- !u!1 &8611723849738733058 stripped
@@ -1692,11 +1742,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop slot 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2968757073289250475}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7112488789383344741, guid: 547a54bed9a63784194676f98cd6ef50,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8300431676177268819, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 2427507584183925478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547a54bed9a63784194676f98cd6ef50, type: 3}
 --- !u!224 &6257515551114528118 stripped
@@ -1844,11 +1934,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop slot 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2968757073289250475}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7112488789383344741, guid: 547a54bed9a63784194676f98cd6ef50,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8300431676177268819, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 2427507584183925478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547a54bed9a63784194676f98cd6ef50, type: 3}
 --- !u!1 &5724312417200800585 stripped
@@ -1996,11 +2126,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop slot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2968757073289250475}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7112488789383344741, guid: 547a54bed9a63784194676f98cd6ef50,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8300431676177268819, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 2427507584183925478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547a54bed9a63784194676f98cd6ef50, type: 3}
 --- !u!1 &8561525923325345925 stripped
