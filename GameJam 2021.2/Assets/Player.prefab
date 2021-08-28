@@ -90,6 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8345377262810652545}
+  - component: {fileID: 820668612561671615}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -116,6 +117,22 @@ Transform:
   m_Father: {fileID: 8148150320533487531}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &820668612561671615
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144398245105332249}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.58
 --- !u!1 &5881683104378066159
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +339,7 @@ GameObject:
   - component: {fileID: 7561000286249625877}
   - component: {fileID: 6363802742712609762}
   - component: {fileID: 7532255841358958904}
+  - component: {fileID: 53133104252205515}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -378,9 +396,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.77
+  m_Radius: 0.61
 --- !u!114 &7561000286249625877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
+  shop: {fileID: 0}
 --- !u!114 &6363802742712609762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +441,20 @@ MonoBehaviour:
   weapon: {fileID: 0}
   hand: {fileID: 8875931115526333877}
   firePoint: {fileID: 8553162649631136260}
+--- !u!114 &53133104252205515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8543630698677783379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6850940ace128ac42835b7e14093b311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibleDuration: 2
+  collider: {fileID: 5903804321016123279}
 --- !u!1 &9219016861732541469
 GameObject:
   m_ObjectHideFlags: 0
