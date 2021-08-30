@@ -7,12 +7,16 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] Weapon weapon;
     [SerializeField] Transform hand;
     [SerializeField] Transform firePoint;
+    [SerializeField] AudioClip shootSound;
+
+    AudioSource audio;
 
     float lastFired = 0f;
 
     private void Start()
     {
         weapon.SpawnWeapon(hand);
+        audio = GetComponent<AudioSource>();
     }
 
 
@@ -20,6 +24,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (Time.time - lastFired > 1 / weapon.fireRate)
         {
+            audio.PlayOneShot(shootSound);
             lastFired = Time.time;
             GameObject bullet = Instantiate(weapon.bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
             bullet.GetComponent<Bullet>().SetBulletDamage(weapon.damage);

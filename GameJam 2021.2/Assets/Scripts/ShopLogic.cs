@@ -69,8 +69,10 @@ public class ShopLogic : MonoBehaviour
         if (curretMoneyAmount >= price)
         {
             curretMoneyAmount -= price;
+            //if (chosenTraps[slot] <TrapTemplate> is placeble)
             playerInput.SelectTrap(chosenTraps[slot]);
             gameObject.SetActive(false);
+            //else just place in in scene and HideTrap()
             shopSlots[slot].GetComponent<ShopSlot>().HideTrap();
             redeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();
