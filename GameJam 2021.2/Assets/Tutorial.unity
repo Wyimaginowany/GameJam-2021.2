@@ -2270,22 +2270,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7187615115633690261, guid: 0d2bec6562de3704f8d0d81eae9f6613,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.437
-      objectReference: {fileID: 0}
     - target: {fileID: 7532255841358958904, guid: 0d2bec6562de3704f8d0d81eae9f6613,
         type: 3}
       propertyPath: weapon
       value: 
       objectReference: {fileID: 11400000, guid: 9405932e4312c0a47943bdf696392572,
         type: 2}
-    - target: {fileID: 7532255841358958904, guid: 0d2bec6562de3704f8d0d81eae9f6613,
-        type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: d105cf61492b55d489a6b1cca1df1590, type: 3}
     - target: {fileID: 7561000286249625877, guid: 0d2bec6562de3704f8d0d81eae9f6613,
         type: 3}
       propertyPath: shop
