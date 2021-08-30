@@ -19,6 +19,7 @@ public class ShopSlot : MonoBehaviour
         {
             Destroy(trapIconPrefab);
         }
+
         turretNameText.text = trapName;
         trapIconPrefab = Instantiate(trapIcon, trapIconSpawn.position, Quaternion.identity, canvas.transform);
         trapIconPrefab.transform.position = trapIconSpawn.position;
