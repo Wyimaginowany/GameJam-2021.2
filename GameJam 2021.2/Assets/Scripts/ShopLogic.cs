@@ -21,6 +21,7 @@ public class ShopLogic : MonoBehaviour
     [SerializeField] GameObject[] chosenTraps;
     [Space(10)]
     [SerializeField] GameObject[] shopSlots;
+    [Space(10)]
 
     int currentRefreshPrice;
     int curretMoneyAmount;

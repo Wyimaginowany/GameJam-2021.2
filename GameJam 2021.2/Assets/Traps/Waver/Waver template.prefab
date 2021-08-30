@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 5850587608444840447}
   - component: {fileID: 6887622681243758096}
   m_Layer: 12
-  m_Name: Waving Turret Template
+  m_Name: Waver template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f53a021468cae448812366c6531ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapName: Waving Turret
+  trapName: Waver
   trapsLayer:
     serializedVersion: 2
     m_Bits: 4096

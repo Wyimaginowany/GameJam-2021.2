@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WavingTurret : MonoBehaviour
+public class Spinner : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] float wavingPeriod = 10f;
+    [SerializeField] float spiningSpeed = 200f;
     [SerializeField] float fireRate;
     [SerializeField] float bulletSpeed;
     [SerializeField] float damage;
-    [SerializeField] float startingAngle;
 
     [Header("To Attach")]
     [SerializeField] GameObject movingParts;
@@ -18,11 +17,9 @@ public class WavingTurret : MonoBehaviour
 
     GameManager gameManager;
     float lastFired = 0f;
-    float movementFactor;
 
     private void Start()
     {
-        startingAngle = transform.rotation.eulerAngles.z;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -30,7 +27,7 @@ public class WavingTurret : MonoBehaviour
     {
         if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {
-            Wave();
+            movingParts.transform.Rotate(new Vector3(0f, 0f, spiningSpeed) * Time.deltaTime);
             Shoot();
         }
     }
@@ -45,18 +42,5 @@ public class WavingTurret : MonoBehaviour
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }
-    }
-
-    private void Wave()
-    {
-        float cycles = Time.time / wavingPeriod;
-        const float tau = Mathf.PI * 2;
-        float rawSinWave = Mathf.Sin(cycles * tau);
-        movementFactor = rawSinWave / 2f + 0.5f;
-
-        movingParts.transform.eulerAngles = new Vector3(
-            movingParts.transform.eulerAngles.x,
-            movingParts.transform.eulerAngles.y,
-            startingAngle + movementFactor * 90 - 45);
     }
 }

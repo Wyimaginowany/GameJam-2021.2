@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 2004342588412715889}
   - component: {fileID: 2551943902241774799}
   m_Layer: 0
-  m_Name: Spinning Turret Template
+  m_Name: Spinner template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f53a021468cae448812366c6531ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapName: Spinning Turret
+  trapName: Spinner
   trapsLayer:
     serializedVersion: 2
     m_Bits: 4096
