@@ -47,7 +47,7 @@ public class ShopLogic : MonoBehaviour
         {
             chosenTraps[i] = trapsTepmplates[Random.Range(0, trapsTepmplates.Length)];
             TrapTemplate selectedTemplate = chosenTraps[i].GetComponent<TrapTemplate>();
-            shopSlots[i].GetComponent<ShopSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice(), selectedTemplate.GetTrapIcon());
+            shopSlots[i].GetComponent<TrapSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice(), selectedTemplate.GetTrapIcon());
             redeemedSlots[i].SetActive(false);
             shopSlots[i].SetActive(true);
         }
@@ -72,7 +72,7 @@ public class ShopLogic : MonoBehaviour
             curretMoneyAmount -= price;
             playerInput.SelectTrap(chosenTraps[slot]);
             gameObject.SetActive(false);
-            shopSlots[slot].GetComponent<ShopSlot>().HideTrap();
+            shopSlots[slot].GetComponent<TrapSlot>().HideTrap();
             redeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();
         }

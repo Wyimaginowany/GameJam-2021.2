@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ShopSlot : MonoBehaviour
+public class TrapSlot : MonoBehaviour
 {
     [SerializeField] TMP_Text turretNameText;
     [SerializeField] TMP_Text turretPriceText;
