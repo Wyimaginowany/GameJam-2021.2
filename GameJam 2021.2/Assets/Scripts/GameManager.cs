@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("To Attach")]
     [SerializeField] GameObject shopUI;
+    [SerializeField] GameObject player;
 
     int currentStage = 0;
     int spawnersLeft;
@@ -82,5 +83,10 @@ public class GameManager : MonoBehaviour
     public GameState GetCurrentState()
     {
         return currentGameState;
+    }
+
+    public GameObject GetPlayer()
+    {
+        return player;
     }
 }

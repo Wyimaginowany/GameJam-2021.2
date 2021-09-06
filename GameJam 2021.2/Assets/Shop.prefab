@@ -1091,6 +1091,7 @@ MonoBehaviour:
   trapsTepmplates:
   - {fileID: 4310899223028015938, guid: 9313544499caf3a45b97ecaa83c4c6b1, type: 3}
   - {fileID: 8157441076167941365, guid: a008718340ae48841a0d596ee381ae6a, type: 3}
+  - {fileID: 4634451948489922851, guid: 519c405c19d44e84a94c6f8b107f8a1d, type: 3}
   redeemedSlots:
   - {fileID: 28933312650984183}
   - {fileID: 4163220609775122747}
@@ -1749,7 +1750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8025198927359085785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2717,6 +2718,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop slot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2968757073289250475}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660755956009255265, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300431676177268819, guid: 547a54bed9a63784194676f98cd6ef50,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 2427507584183925478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547a54bed9a63784194676f98cd6ef50, type: 3}
 --- !u!1 &28933312650984183 stripped

@@ -36,7 +36,7 @@ public class EnemyStats : MonoBehaviour
             Destroy(collider);
         }
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject);
     }
 
     public bool CheckIfAlive()

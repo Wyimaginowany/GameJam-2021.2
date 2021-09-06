@@ -8,7 +8,6 @@ public class TrapSlot : MonoBehaviour
     [SerializeField] TMP_Text turretNameText;
     [SerializeField] TMP_Text turretPriceText;
     [SerializeField] Transform trapIconSpawn;
-    [SerializeField] Canvas canvas;
     [SerializeField] GameObject[] objectsToHide;
 
     GameObject trapIconPrefab;
@@ -21,7 +20,7 @@ public class TrapSlot : MonoBehaviour
         }
 
         turretNameText.text = trapName;
-        trapIconPrefab = Instantiate(trapIcon, trapIconSpawn.position, Quaternion.identity, canvas.transform);
+        trapIconPrefab = Instantiate(trapIcon, trapIconSpawn.position, Quaternion.identity, trapIconSpawn);
         trapIconPrefab.transform.position = trapIconSpawn.position;
         turretPriceText.text = trapPrice.ToString() + "$";
         ShowTrap();
