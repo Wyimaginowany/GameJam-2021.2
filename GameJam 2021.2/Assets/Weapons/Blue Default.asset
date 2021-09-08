@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e1b409ea2c7ef4ba4cbf648dec56b8, type: 3}
   m_Name: Blue Default
   m_EditorClassIdentifier: 
+  damage: 20
+  bulletSpeed: 40
+  fireRate: 5
   weaponPrefab: {fileID: 8896958910267327236, guid: 90b895e1412d6de41bba45d9d035ea11,
     type: 3}
   bulletPrefab: {fileID: 6643730351185338275, guid: bcb211ad40b6045488956f415069ff75,
     type: 3}
-  damage: 20
-  bulletSpeed: 40
-  fireRate: 12

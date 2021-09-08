@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Barrel
   m_EditorClassIdentifier: 
   upgradeType: 0
-  upgradeName: 
+  upgradeName: Barrel
   price: 50
-  amount: 1
+  amount: 20
   upgradeIcon: {fileID: 0}
