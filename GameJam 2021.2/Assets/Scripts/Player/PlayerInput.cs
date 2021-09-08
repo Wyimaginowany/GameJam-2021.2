@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject shop;
     //to do make it automatic
     [SerializeField] Camera camera = null;
 
-    [SerializeField] GameObject shop;
+    
 
     GameManager gameManager;
     GameObject selectedTrap = null;
@@ -16,6 +17,7 @@ public class PlayerInput : MonoBehaviour
     PlayerShooting playerShooting;
     Vector2 movement;
     Vector2 mousePosition;
+    bool isPaused = false;
 
     private void Start()
     {
@@ -30,6 +32,19 @@ public class PlayerInput : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
 
         if (gameManager.GetCurrentState() == GameState.WaitingPhase)
         {
@@ -89,5 +104,25 @@ public class PlayerInput : MonoBehaviour
     {
         Destroy(selectedTrap);
         selectedTrap = Instantiate(trapTemplate, transform.position, Quaternion.identity);
+    }
+
+    private void Resume()
+    {
+        if (gameManager.GetCurrentState() == GameState.BuildPhase)
+        {
+            shop.SetActive(true);
+        }
+
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    private void Pause()
+    {
+        pauseMenu.SetActive(true);
+        shop.SetActive(false);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 }
