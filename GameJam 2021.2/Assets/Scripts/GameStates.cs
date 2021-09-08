@@ -2,6 +2,5 @@
 {
     WaitingPhase,
     CombatPhase,
-    BuildPhase,
-    Pause
+    BuildPhase
 }

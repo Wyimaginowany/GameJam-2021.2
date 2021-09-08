@@ -106,7 +106,7 @@ public class PlayerInput : MonoBehaviour
         selectedTrap = Instantiate(trapTemplate, transform.position, Quaternion.identity);
     }
 
-    private void Resume()
+    public void Resume()
     {
         if (gameManager.GetCurrentState() == GameState.BuildPhase)
         {

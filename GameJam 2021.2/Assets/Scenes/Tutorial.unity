@@ -1801,6 +1801,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1177656797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2549510307883976630, guid: d0f01fba068016948bdcde4a9186979f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2549510306777700971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1298434593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2298,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 850789108}
+    - target: {fileID: 7561000286249625877, guid: 0d2bec6562de3704f8d0d81eae9f6613,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1177656797}
     - target: {fileID: 8148150320533487531, guid: 0d2bec6562de3704f8d0d81eae9f6613,
         type: 3}
       propertyPath: m_RootOrder
@@ -2773,6 +2784,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2549510306926094609, guid: d0f01fba068016948bdcde4a9186979f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2029524861}
+    - target: {fileID: 2549510306926094609, guid: d0f01fba068016948bdcde4a9186979f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549510306926094609, guid: d0f01fba068016948bdcde4a9186979f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2549510307883976629, guid: d0f01fba068016948bdcde4a9186979f,
         type: 3}
       propertyPath: m_RootOrder
