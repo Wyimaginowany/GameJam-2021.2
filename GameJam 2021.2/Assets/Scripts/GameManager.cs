@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             {
                 SetState(GameState.BuildPhase);
                 //move player to center
-                shopUI.GetComponent<ShopLogic>().DrawRandomTraps();
+                shopUI.GetComponent<ShopLogic>().DrawRandomShop();
                 shopUI.SetActive(true);
                 spawnersEmpty = false;
             }

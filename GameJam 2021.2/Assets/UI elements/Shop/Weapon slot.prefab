@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2021791054375328710}
   m_Layer: 5
-  m_Name: Trap name
+  m_Name: Upgrade name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,7 +528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6258371337353973526}
-  - component: {fileID: 2657672730328548685}
+  - component: {fileID: 5559965930755397210}
   m_Layer: 5
   m_Name: Weapon slot
   m_TagString: Untagged
@@ -560,7 +560,7 @@ RectTransform:
   m_AnchoredPosition: {x: -180, y: 120.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2657672730328548685
+--- !u!114 &5559965930755397210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -569,13 +569,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4887025710944242953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f5257e0ce2b0f44a2ea50bf1b6a227, type: 3}
+  m_Script: {fileID: 11500000, guid: a55dd9e401fd28f4d9f90878d876517f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretNameText: {fileID: 8141836172389178639}
-  turretPriceText: {fileID: 1307606904520264340}
-  trapIconSpawn: {fileID: 1128152384899673126}
-  canvas: {fileID: 0}
+  weaponNameText: {fileID: 8141836172389178639}
+  weaponPriceText: {fileID: 1307606904520264340}
+  weaponIconSpawn: {fileID: 1128152384899673126}
   objectsToHide:
   - {fileID: 737557905511867455}
   - {fileID: 6807439385713250731}
@@ -683,10 +682,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 4ea1e82440c3fae4cbe04eafbdccbec3,
+    m_HighlightedSprite: {fileID: 21300000, guid: 779fd57147c1ea0409bd82f310efdaf1,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 55a63833274312747b37f5564cde6bff, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 55a63833274312747b37f5564cde6bff, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 03986aa932e02a64eae7c14dcb130b86, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 03986aa932e02a64eae7c14dcb130b86, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -726,15 +725,15 @@ RectTransform:
   m_GameObject: {fileID: 7811057122697761440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1125625530800539885}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 14}
-  m_SizeDelta: {x: 98.09549, y: 117.392975}
+  m_AnchoredPosition: {x: 1, y: 0}
+  m_SizeDelta: {x: 61, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6231411634997869962
 CanvasRenderer:
@@ -807,8 +806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000103, y: 0.000037193}
-  m_SizeDelta: {x: 106, y: 106}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 145.1396, y: 145.1396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5482628531907605066
 CanvasRenderer:
@@ -857,7 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993363639035642385}
   m_Layer: 5
-  m_Name: Trap price
+  m_Name: Upgrade price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

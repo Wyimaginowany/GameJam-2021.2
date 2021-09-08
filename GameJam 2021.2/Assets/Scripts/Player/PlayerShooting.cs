@@ -9,8 +9,8 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] Transform hand;
     [SerializeField] Transform firePoint;
 
-    private float damageUpgrade = 0;
-    private float fireRateUpgrade = 0;
+    [SerializeField] private float damageUpgrade = 0;
+    [SerializeField] private float fireRateUpgrade = 0;
 
     float lastFired = 0f;
 
@@ -21,7 +21,7 @@ public class PlayerShooting : MonoBehaviour
 
     public void Shoot()
     {
-        if (Time.time - lastFired > 1 / weapon.fireRate + fireRateUpgrade)
+        if (Time.time - lastFired > 1 / (weapon.fireRate + fireRateUpgrade))
         {
             lastFired = Time.time;
             GameObject bullet = Instantiate(weapon.bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
@@ -31,14 +31,19 @@ public class PlayerShooting : MonoBehaviour
         }     
     }
 
-    public void UpgradeDamage(float value)
+    public void Upgrade(UpgradeTypes type, float value)
     {
-        damageUpgrade += value;
+        switch(type)
+        {
+            case UpgradeTypes.Damage:
+                damageUpgrade += value;
+                break;
+            case UpgradeTypes.FireRate:
+                fireRateUpgrade += value;
+                break;
+            case UpgradeTypes.Health:
+                //
+                break;
+        }
     }
-
-    public void UpgradeFireRate(float value)
-    {
-        fireRateUpgrade += value;
-    }
-
 }

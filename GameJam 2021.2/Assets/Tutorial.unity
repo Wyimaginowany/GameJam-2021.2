@@ -353,6 +353,11 @@ PrefabInstance:
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 2029524861}
+    - target: {fileID: 2968757073289250475, guid: dcd325ca310b597478e80462fa5d8c42,
+        type: 3}
+      propertyPath: playerShooting
+      value: 
+      objectReference: {fileID: 554810625}
     - target: {fileID: 4975429707635659796, guid: dcd325ca310b597478e80462fa5d8c42,
         type: 3}
       propertyPath: m_RootOrder
@@ -528,6 +533,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &554810625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7532255841358958904, guid: 0d2bec6562de3704f8d0d81eae9f6613,
+    type: 3}
+  m_PrefabInstance: {fileID: 1712587270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb5c9f8ecb95624dbaae6ad48dcd622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589069187
 GameObject:
   m_ObjectHideFlags: 0
