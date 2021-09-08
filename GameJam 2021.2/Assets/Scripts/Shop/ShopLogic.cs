@@ -114,13 +114,6 @@ public class ShopLogic : MonoBehaviour
             upgradeRedeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();
         }
-
-        //cycuszki {damage, fire rate, hp}
-        //weaponTemplate = (int price, int amount, cycuszki)
-        //local amount i cycuszki = chosenWeapons[slot].<weaponTemplate>();
-        
-        //GetComponent<WeaponUpgrades>().Upgrade(local amount i local cycuszki);
-        //weaponUpgrades -> switch(cycuszki) case damage TO playerShooting.UpgradeDamage();
     }
 
     private void ApplyRefreshDiscount()
