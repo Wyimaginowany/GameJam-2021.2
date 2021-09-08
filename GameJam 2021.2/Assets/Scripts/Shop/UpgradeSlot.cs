@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WeaponSlot : MonoBehaviour
+public class UpgradeSlot : MonoBehaviour
 {
     [SerializeField] TMP_Text weaponNameText;
     [SerializeField] TMP_Text weaponPriceText;

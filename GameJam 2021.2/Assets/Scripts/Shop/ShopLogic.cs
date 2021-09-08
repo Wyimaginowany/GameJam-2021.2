@@ -73,7 +73,7 @@ public class ShopLogic : MonoBehaviour
     private void DrawRandomUpgrade(int i)
     {
         chosenUpgrades[i] = upgradeTemplates[Random.Range(0, upgradeTemplates.Length)];
-        upgradeSlots[i].GetComponent<WeaponSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price);//, chosenUpgrades[i].upgradeIcon);
+        upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price);//, chosenUpgrades[i].upgradeIcon);
         upgradeRedeemedSlots[i].SetActive(false);
         upgradeSlots[i].SetActive(true);
     }
@@ -110,7 +110,7 @@ public class ShopLogic : MonoBehaviour
         {
             curretMoneyAmount -= price;
             playerShooting.Upgrade(chosenUpgrades[slot].upgradeType, chosenUpgrades[slot].amount);
-            upgradeSlots[slot].GetComponent<WeaponSlot>().HideWeapon();
+            upgradeSlots[slot].GetComponent<UpgradeSlot>().HideWeapon();
             upgradeRedeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();
         }
