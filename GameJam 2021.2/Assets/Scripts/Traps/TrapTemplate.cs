@@ -7,7 +7,6 @@ public class TrapTemplate : MonoBehaviour
     [Header("Settings")]
     [SerializeField] string trapName;
     [SerializeField] LayerMask trapsLayer;
-    [SerializeField] int gridSize = 3;
     [SerializeField] int trapPrice = 50;
 
     [Header("To Attach")]
@@ -15,7 +14,13 @@ public class TrapTemplate : MonoBehaviour
     [SerializeField] GameObject objectsToRotate;
     [SerializeField] GameObject trapIcon;
 
+    int gridSize;
     float rotation = 0f;
+
+    private void Start()
+    {
+        gridSize = GameObject.Find("GameManager").GetComponent<GameManager>().GetGridSize();
+    }
 
     public void PlaceTrap(GameObject shop)
     {

@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float invincibleDuration = 1f;
-
+    [SerializeField] int playerMaxHealth = 5;
 
     bool invincible = false;
     int playerHealth = 5;
 
+    private void Start()
+    {
+        playerHealth = playerMaxHealth;
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -18,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
             TakeDamege();
         }
     }
-
 
     public void TakeDamege()
     {
@@ -49,6 +52,10 @@ public class PlayerHealth : MonoBehaviour
         invincible = false;
     }
 
-
+    public void Upgrade(int value)
+    {
+        playerMaxHealth++;
+        playerHealth = playerMaxHealth;
+    }
 
 }

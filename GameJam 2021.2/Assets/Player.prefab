@@ -157,8 +157,8 @@ Transform:
   - {fileID: 302180124435754971}
   - {fileID: 2637101769324501050}
   - {fileID: 6668758395701614396}
-  - {fileID: 8875931115526333877}
   - {fileID: 8553162649631136260}
+  - {fileID: 1134510421517104040}
   m_Father: {fileID: 8148150320533487531}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,7 +178,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.58
---- !u!1 &5881683104378066159
+--- !u!1 &2274982164079405757
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8875931115526333877}
+  - component: {fileID: 1134510421517104040}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -194,19 +194,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8875931115526333877
+--- !u!4 &1134510421517104040
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881683104378066159}
+  m_GameObject: {fileID: 2274982164079405757}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74, y: 0.33, z: 0}
+  m_LocalPosition: {x: 0.782, y: 0.521, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8345377262810652545}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7285869395158135391
 GameObject:
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  hand: {fileID: 8875931115526333877}
+  hand: {fileID: 1134510421517104040}
   firePoint: {fileID: 8553162649631136260}
   bulletsPool: {fileID: 4536175162186423745}
   damageUpgrade: 0
@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibleDuration: 2
+  playerMaxHealth: 5
 --- !u!1 &9219016861732541469
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,5 +533,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8345377262810652545}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

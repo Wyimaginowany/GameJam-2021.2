@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] int gridSize = 3;
+
     [Header("To Attach")]
     [SerializeField] GameObject shopUI;
     [SerializeField] GameObject player;
@@ -88,5 +91,10 @@ public class GameManager : MonoBehaviour
     public GameObject GetPlayer()
     {
         return player;
+    }
+
+    public int GetGridSize()
+    {
+        return gridSize;
     }
 }
