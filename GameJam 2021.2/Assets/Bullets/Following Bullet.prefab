@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 6916335730758406274}
   - component: {fileID: 3744554606397319096}
   - component: {fileID: 601082325400901352}
+  - component: {fileID: 7318437474792360535}
   m_Layer: 8
   m_Name: Following Bullet
   m_TagString: Untagged
@@ -162,5 +163,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d90d57ec92f68c740b8929861204c764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+--- !u!114 &7318437474792360535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749082595021278360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c3f1b2f3ce5814386b8fdeee2313f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

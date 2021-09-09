@@ -2,10 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IGameObjectPolled
 {
     private float damage;
 
+
+    private GameObjectsPool pool;
+    public GameObjectsPool Pool
+    {
+        get { return pool;  }
+        set
+        {
+            if (pool == null)
+            {
+                pool = value;
+            }
+            else
+            {
+                throw new System.Exception("Pool is used wrong way");
+            }
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,7 +31,7 @@ public class Bullet : MonoBehaviour
             collision.collider.GetComponent<EnemyStats>().HandleHit(damage);
         }
 
-        Destroy(gameObject);
+        pool.ReturnToPool(this.gameObject);
     }
 
     public void SetBulletDamage(float damage)
@@ -22,4 +39,9 @@ public class Bullet : MonoBehaviour
         this.damage = damage;
     }
 
+}
+
+internal interface IGameObjectPolled
+{
+    GameObjectsPool Pool { get; set; }
 }

@@ -12,8 +12,8 @@ public class Waver : MonoBehaviour
     [SerializeField] float startingAngle;
 
     [Header("To Attach")]
+    [SerializeField] GameObjectsPool bulletsPool;
     [SerializeField] GameObject movingParts;
-    [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
 
     GameManager gameManager;
@@ -40,8 +40,11 @@ public class Waver : MonoBehaviour
         if (Time.time - lastFired > 1 / fireRate)
         {
             lastFired = Time.time;
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+            var bullet = bulletsPool.GetBullet();
             bullet.GetComponent<Bullet>().SetBulletDamage(damage);
+            bullet.transform.rotation = firePoint.transform.rotation;
+            bullet.transform.position = firePoint.transform.position;
+            bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }

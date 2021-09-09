@@ -306,6 +306,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5907642890936949197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5046345512866465212}
+  - component: {fileID: 7296928610637776409}
+  m_Layer: 12
+  m_Name: Bullet Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5046345512866465212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907642890936949197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2004342588412715889}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7296928610637776409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907642890936949197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdac390b347c4d458e1c2201d745f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6643730351185338275, guid: bcb211ad40b6045488956f415069ff75,
+    type: 3}
 --- !u!1 &8157441076167941365
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +363,7 @@ GameObject:
   - component: {fileID: 3386369896774030819}
   - component: {fileID: 7866836962125279053}
   m_Layer: 12
-  m_Name: Spinning Turret
+  m_Name: Spinner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,6 +382,7 @@ Transform:
   m_Children:
   - {fileID: 963335672550674590}
   - {fileID: 4983276056895383884}
+  - {fileID: 5046345512866465212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -372,7 +418,6 @@ MonoBehaviour:
   fireRate: 20
   bulletSpeed: 20
   damage: 100
+  bulletsPool: {fileID: 7296928610637776409}
   movingParts: {fileID: 1763489522687818514}
-  bulletPrefab: {fileID: 6643730351185338275, guid: bcb211ad40b6045488956f415069ff75,
-    type: 3}
   firePoint: {fileID: 5922487253934006896}

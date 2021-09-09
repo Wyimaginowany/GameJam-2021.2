@@ -10,8 +10,8 @@ public class Equalizer : MonoBehaviour
     [SerializeField] float damage;
 
     [Header("To Attach")]
+    [SerializeField] GameObjectsPool bulletsPool;
     [SerializeField] GameObject movingParts;
-    [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
 
     GameManager gameManager;
@@ -46,8 +46,13 @@ public class Equalizer : MonoBehaviour
         if (Time.time - lastFired > 1 / fireRate)
         {
             lastFired = Time.time;
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
-            bullet.GetComponent<FollowingBullet>().CreateBullet(damage, bulletSpeed, target);  
+            var bullet = bulletsPool.GetBullet();
+            bullet.GetComponent<Bullet>().SetBulletDamage(damage);
+            bullet.transform.rotation = firePoint.transform.rotation;
+            bullet.transform.position = firePoint.transform.position;
+            bullet.gameObject.SetActive(true);
+
+            bullet.GetComponent<FollowingBullet>().CreateBullet(bulletSpeed, target);  
         }
     }
 

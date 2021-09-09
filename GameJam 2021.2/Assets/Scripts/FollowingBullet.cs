@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FollowingBullet : MonoBehaviour
 {
-    private float damage;
     private float speed;
     public GameObject enemy;
 
@@ -21,19 +20,8 @@ public class FollowingBullet : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void CreateBullet(float speed, GameObject enemy)
     {
-        if (collision.collider.CompareTag("Enemy"))
-        {
-            collision.collider.GetComponent<EnemyStats>().HandleHit(damage);
-        }
-
-        Destroy(gameObject);
-    }
-
-    public void CreateBullet(float damage, float speed, GameObject enemy)
-    {
-        this.damage = damage;
         this.speed = speed;
         this.enemy = enemy;
     }

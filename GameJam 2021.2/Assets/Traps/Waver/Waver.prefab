@@ -81,6 +81,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1448197085947181518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5951075918210467557}
+  - component: {fileID: 5541305499785843037}
+  m_Layer: 12
+  m_Name: Bullets Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5951075918210467557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448197085947181518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5850587608444840447}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5541305499785843037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448197085947181518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdac390b347c4d458e1c2201d745f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5893716050210804689, guid: c4b4d5a4639ac62488912af36d6e5e52,
+    type: 3}
 --- !u!1 &1603021679652661574
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +220,7 @@ GameObject:
   - component: {fileID: 8474107027430684881}
   - component: {fileID: 2966590260594667719}
   m_Layer: 12
-  m_Name: Waving Turret
+  m_Name: Waver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,6 +239,7 @@ Transform:
   m_Children:
   - {fileID: 3765182855983312253}
   - {fileID: 7690966365298933562}
+  - {fileID: 5951075918210467557}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -230,9 +276,8 @@ MonoBehaviour:
   bulletSpeed: 20
   damage: 20
   startingAngle: 0
+  bulletsPool: {fileID: 5541305499785843037}
   movingParts: {fileID: 6817561343497894552}
-  bulletPrefab: {fileID: 5893716050210804689, guid: c4b4d5a4639ac62488912af36d6e5e52,
-    type: 3}
   firePoint: {fileID: 8033825766389169146}
 --- !u!1 &5092631547865299995
 GameObject:
