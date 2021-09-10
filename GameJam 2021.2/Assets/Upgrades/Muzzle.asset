@@ -16,4 +16,5 @@ MonoBehaviour:
   upgradeName: Muzzle
   price: 50
   amount: 10
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 206422092453109370, guid: f03de282fd403434abd382381f7a0f56,
+    type: 3}
