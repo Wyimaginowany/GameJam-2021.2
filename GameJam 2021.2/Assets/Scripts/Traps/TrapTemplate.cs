@@ -6,6 +6,7 @@ public class TrapTemplate : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] string trapName;
+    public bool isPlaceable = true;
     [SerializeField] LayerMask trapsLayer;
     [SerializeField] int trapPrice = 50;
 
@@ -60,5 +61,11 @@ public class TrapTemplate : MonoBehaviour
     public GameObject GetTrapIcon()
     {
         return trapIcon;
+    }
+
+    public void SpawnTrap()
+    {
+        Vector3 spawnPosition = new Vector3(0f, 0f, 0f);
+        Instantiate(finalObject, spawnPosition, Quaternion.identity);
     }
 }

@@ -12,7 +12,7 @@ public class UpgradeSlot : MonoBehaviour
 
     GameObject weaponIconPrefab;
 
-    public void CreateWeaponSlot(string weaponName, float weaponPrice)//, GameObject weaponIcon)
+    public void CreateWeaponSlot(string weaponName, float weaponPrice, GameObject weaponIcon)
     {
         if (weaponIconPrefab != null)
         {
@@ -20,8 +20,8 @@ public class UpgradeSlot : MonoBehaviour
         }
 
         weaponNameText.text = weaponName;
-        //weaponIconPrefab = Instantiate(weaponIcon, weaponIconSpawn.position, Quaternion.identity, weaponIconSpawn);
-        //weaponIconPrefab.transform.position = weaponIconSpawn.position;
+        weaponIconPrefab = Instantiate(weaponIcon, weaponIconSpawn.position, Quaternion.identity, weaponIconSpawn);
+        weaponIconPrefab.transform.position = weaponIconSpawn.position;
         weaponPriceText.text = weaponPrice.ToString() + "$";
         ShowWeapon();
     }

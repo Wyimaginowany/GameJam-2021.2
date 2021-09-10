@@ -73,7 +73,7 @@ public class ShopLogic : MonoBehaviour
     private void DrawRandomUpgrade(int i)
     {
         chosenUpgrades[i] = upgradeTemplates[Random.Range(0, upgradeTemplates.Length)];
-        upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price);//, chosenUpgrades[i].upgradeIcon);
+        upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price, chosenUpgrades[i].upgradeIcon);
         upgradeRedeemedSlots[i].SetActive(false);
         upgradeSlots[i].SetActive(true);
     }
@@ -91,12 +91,21 @@ public class ShopLogic : MonoBehaviour
 
     public void BuyTurret(int slot)
     {
-        int price = chosenTraps[slot].GetComponent<TrapTemplate>().GetTrapPrice();
+        TrapTemplate template = chosenTraps[slot].GetComponent<TrapTemplate>();
+        int price = template.GetTrapPrice();
         if (curretMoneyAmount >= price)
         {
             curretMoneyAmount -= price;
-            playerInput.SelectTrap(chosenTraps[slot]);
-            gameObject.SetActive(false);
+
+            if (template.isPlaceable)
+            {
+                playerInput.SelectTrap(chosenTraps[slot]);
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                template.SpawnTrap();
+            } 
             trapSlots[slot].GetComponent<TrapSlot>().HideTrap();
             trapRedeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();

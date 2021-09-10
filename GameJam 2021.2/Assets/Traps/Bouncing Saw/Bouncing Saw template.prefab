@@ -9,11 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4439092113914806724}
-  - component: {fileID: 4439092113914806725}
-  - component: {fileID: 4439092113914806726}
-  - component: {fileID: 8363254547497660517}
-  m_Layer: 12
-  m_Name: Bouncing Saw
+  - component: {fileID: 13142837625590670}
+  m_Layer: 13
+  m_Name: Bouncing Saw template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,44 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &4439092113914806725
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4439092113914806727}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &4439092113914806726
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4439092113914806727}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: d8bf587def16cbd4799a6de7f7123cf7, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.56
---- !u!114 &8363254547497660517
+--- !u!114 &13142837625590670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,13 +41,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4439092113914806727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a757714940c2e14791f7cbb3923f50d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87f53a021468cae448812366c6531ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spiningSpeed: 10
-  randomFactor: 0.2
-  startForce: {x: 5, y: 3}
-  sawGFX: {fileID: 4439092114323532157}
+  trapName: Bouncing Saw
+  isPlaceable: 0
+  trapsLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  trapPrice: 50
+  finalObject: {fileID: 4439092113914806727, guid: 020b20f1ea1b22e4c9319ddea4c7417e,
+    type: 3}
+  objectsToRotate: {fileID: 0}
+  trapIcon: {fileID: 305766659310059391, guid: eb9f4e3e1d69cbd4790bc6d76dd3a986, type: 3}
 --- !u!1 &4439092114323532157
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +64,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4439092114323532155}
   - component: {fileID: 4439092114323532156}
-  - component: {fileID: 1359239803686344508}
   m_Layer: 0
   m_Name: Saw GFX
   m_TagString: Untagged
@@ -114,7 +80,7 @@ Transform:
   m_GameObject: {fileID: 4439092114323532157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4439092113914806724}
   m_RootOrder: 0
@@ -169,19 +135,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1359239803686344508
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4439092114323532157}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.575

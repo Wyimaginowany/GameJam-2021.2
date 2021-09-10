@@ -1093,6 +1093,7 @@ MonoBehaviour:
   - {fileID: 4310899223028015938, guid: 9313544499caf3a45b97ecaa83c4c6b1, type: 3}
   - {fileID: 8157441076167941365, guid: a008718340ae48841a0d596ee381ae6a, type: 3}
   - {fileID: 4634451948489922851, guid: 519c405c19d44e84a94c6f8b107f8a1d, type: 3}
+  - {fileID: 4439092113914806727, guid: 540a44094201e4c4fbb829ecdda8ae95, type: 3}
   trapRedeemedSlots:
   - {fileID: 28933312650984183}
   - {fileID: 4163220609775122747}
