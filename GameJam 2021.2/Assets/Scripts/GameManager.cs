@@ -46,10 +46,8 @@ public class GameManager : MonoBehaviour
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
-                SetState(GameState.BuildPhase);
-                //move player to center
                 shopUI.GetComponent<ShopLogic>().DrawRandomShop();
-                shopUI.SetActive(true);
+                Invoke("EndPhase", 1f);
                 spawnersEmpty = false;
             }
         }
@@ -96,5 +94,12 @@ public class GameManager : MonoBehaviour
     public int GetGridSize()
     {
         return gridSize;
+    }
+
+    public void EndPhase()
+    {
+        SetState(GameState.BuildPhase);
+        //move player to center
+        shopUI.SetActive(true);
     }
 }
