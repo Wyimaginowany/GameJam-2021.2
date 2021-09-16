@@ -23,6 +23,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pool") && !invincible)
+        {
+            TakeDamege();
+        }
+    }
+
     public void TakeDamege()
     {
         playerHealth--;

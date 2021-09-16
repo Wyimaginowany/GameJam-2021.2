@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ShopLogic : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ShopLogic : MonoBehaviour
     [Header("To Attach")]
     [SerializeField] PlayerInput playerInput;
     [SerializeField] PlayerShooting playerShooting;
+    [SerializeField] Toggle trapToggle;
+    [SerializeField] Toggle upgradeToggle;
     [SerializeField] TMP_Text moneyAmountText;
     [SerializeField] TMP_Text refreshPriceText;
     [Header("TRAPS")]
@@ -33,6 +36,9 @@ public class ShopLogic : MonoBehaviour
     [Space(10)]
     [SerializeField] GameObject[] upgradeSlots;
     [Space(10)]
+
+    public bool trapLocked = false;
+    public bool upgradeLocked = false;
 
     int currentRefreshPrice;
     int curretMoneyAmount;
@@ -63,24 +69,30 @@ public class ShopLogic : MonoBehaviour
 
     private void DrawRandomTrap(int i)
     {
-        chosenTraps[i] = trapsTepmplates[Random.Range(0, trapsTepmplates.Length)];
-        TrapTemplate selectedTemplate = chosenTraps[i].GetComponent<TrapTemplate>();
-        trapSlots[i].GetComponent<TrapSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice(), selectedTemplate.GetTrapIcon());
-        trapRedeemedSlots[i].SetActive(false);
-        trapSlots[i].SetActive(true);
+        if (!trapLocked)
+        {
+            chosenTraps[i] = trapsTepmplates[Random.Range(0, trapsTepmplates.Length)];
+            TrapTemplate selectedTemplate = chosenTraps[i].GetComponent<TrapTemplate>();
+            trapSlots[i].GetComponent<TrapSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice(), selectedTemplate.GetTrapIcon());
+            trapRedeemedSlots[i].SetActive(false);
+            trapSlots[i].SetActive(true);
+        }
     }
 
     private void DrawRandomUpgrade(int i)
     {
-        chosenUpgrades[i] = upgradeTemplates[Random.Range(0, upgradeTemplates.Length)];
-        upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price, chosenUpgrades[i].upgradeIcon);
-        upgradeRedeemedSlots[i].SetActive(false);
-        upgradeSlots[i].SetActive(true);
+        if (!upgradeLocked)
+        {
+            chosenUpgrades[i] = upgradeTemplates[Random.Range(0, upgradeTemplates.Length)];
+            upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price, chosenUpgrades[i].upgradeIcon);
+            upgradeRedeemedSlots[i].SetActive(false);
+            upgradeSlots[i].SetActive(true);
+        }
     }
 
     public void RefreshShop()
     {
-        if (curretMoneyAmount >= currentRefreshPrice)
+        if (curretMoneyAmount >= currentRefreshPrice && !(trapLocked && upgradeLocked))
         {
             DrawRandomShop();
             curretMoneyAmount -= currentRefreshPrice;
@@ -144,5 +156,26 @@ public class ShopLogic : MonoBehaviour
         gameObject.SetActive(false);
         gameManager.SetState(GameState.CombatPhase);
         gameManager.StartNextStage();
+    }
+
+    public void SetToggle()
+    {
+        if (trapToggle.isOn)
+        {
+            trapLocked = true;
+        }
+        else
+        {
+            trapLocked = false;
+        }
+
+        if (upgradeToggle.isOn)
+        {
+            upgradeLocked = true;
+        }
+        else
+        {
+            upgradeLocked = false;
+        }
     }
 }

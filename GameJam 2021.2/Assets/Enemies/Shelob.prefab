@@ -964,6 +964,7 @@ GameObject:
   - component: {fileID: 1542830337746507332}
   - component: {fileID: 5446287979108255006}
   - component: {fileID: 963455959459099362}
+  - component: {fileID: 2090261442759992578}
   m_Layer: 9
   m_Name: Shelob
   m_TagString: Enemy
@@ -1071,6 +1072,21 @@ MonoBehaviour:
   circleColliders:
   - {fileID: 3346969247741327752}
   - {fileID: 1558652394281050335}
+--- !u!114 &2090261442759992578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793444557538152904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e436804de566694a8a949cc143ea193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolPrefab: {fileID: 1015086965075421048, guid: 09573da0ba4dee641b18d3bf942fa5c0,
+    type: 3}
+  spawnPoint: {fileID: 7189009093792255111}
 --- !u!1 &9167129562615159574
 GameObject:
   m_ObjectHideFlags: 0

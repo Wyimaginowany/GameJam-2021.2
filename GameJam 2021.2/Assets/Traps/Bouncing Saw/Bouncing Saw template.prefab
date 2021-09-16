@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f53a021468cae448812366c6531ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapName: Bouncing Saw
+  trapName: Saw
   isPlaceable: 0
   trapsLayer:
     serializedVersion: 2

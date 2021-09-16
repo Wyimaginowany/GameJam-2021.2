@@ -8,9 +8,8 @@ public class ChmmrOnSpawn : MonoBehaviour
 
     EnemyMovement enemyMovement;
     Animator animator;
+    float timer;
 
-    // remove serialize
-    [SerializeField] float timer;
 
     private void Start()
     {
