@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] float startingSpeed;
 
-    [SerializeField] float enemySpeed = 2f;
+    
+    float enemySpeed;
     Rigidbody2D rigidbody;
     EnemyStats enemyStats;
-
     private Transform target;
 
     private void Start()
     {
+        enemySpeed = startingSpeed;
         enemyStats = GetComponent<EnemyStats>();
         rigidbody = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -38,5 +40,15 @@ public class EnemyMovement : MonoBehaviour
     {
         float angle = Mathf.Atan2(destination.y, destination.x) * Mathf.Rad2Deg - 90f;
         rigidbody.rotation = angle;
+    }
+
+    public void SetEnemySpeed(float speed)
+    {
+        enemySpeed = speed;
+    }
+
+    public void ResetSpeed()
+    {
+        enemySpeed = startingSpeed;
     }
 }

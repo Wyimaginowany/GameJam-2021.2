@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 1727331786854991873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5389721502619489198}
   - {fileID: 7117449217741249228}
@@ -1033,7 +1033,7 @@ Animator:
   m_GameObject: {fileID: 8793444557538152904}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 5341397174c1ac6448a02b5f3afd71ca, type: 2}
+  m_Controller: {fileID: 9100000, guid: fa8d1307c4b43ea498277a1687167323, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7dee60ac6e2fa469f69b716922cd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 3.7
+  startingSpeed: 4
 --- !u!114 &963455959459099362
 MonoBehaviour:
   m_ObjectHideFlags: 0
