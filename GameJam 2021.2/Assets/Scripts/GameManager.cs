@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
     {
         SetState(GameState.BuildPhase);
         //move player to center
+        shopUI.GetComponent<ShopLogic>().RefreshStats();
         shopUI.SetActive(true);
     }
 }

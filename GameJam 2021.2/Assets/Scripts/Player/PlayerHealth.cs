@@ -68,4 +68,13 @@ public class PlayerHealth : MonoBehaviour
         playerHealth = playerMaxHealth;
     }
 
+    public int GetMaxHealth()
+    {
+        return playerMaxHealth;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return playerHealth;
+    }
 }

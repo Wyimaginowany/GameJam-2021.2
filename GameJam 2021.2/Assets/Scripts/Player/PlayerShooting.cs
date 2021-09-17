@@ -10,14 +10,16 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] GameObjectsPool bulletsPool;
 
-    [SerializeField] private float damageUpgrade = 0;
-    [SerializeField] private float fireRateUpgrade = 0;
+    private float damageUpgrade = 0;
+    private float fireRateUpgrade = 0;
 
+    PlayerHealth playerHealth;
     float lastFired = 0f;
 
     private void Start()
     {
         weapon.SpawnWeapon(hand);
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     public void Shoot()
@@ -46,8 +48,18 @@ public class PlayerShooting : MonoBehaviour
                 fireRateUpgrade += value;
                 break;
             case UpgradeTypes.Health:
-                //
+                playerHealth.Upgrade((int)value);
                 break;
         }
+    }
+
+    public float GetCombinedDamage()
+    {
+        return weapon.damage + damageUpgrade;
+    }
+
+    public float GetCombinedFireRate()
+    {
+        return weapon.fireRate + fireRateUpgrade;
     }
 }

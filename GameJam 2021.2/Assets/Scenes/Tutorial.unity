@@ -1687,6 +1687,11 @@ PrefabInstance:
       objectReference: {fileID: 2029524861}
     - target: {fileID: 2968757073289250475, guid: dcd325ca310b597478e80462fa5d8c42,
         type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 580891255}
+    - target: {fileID: 2968757073289250475, guid: dcd325ca310b597478e80462fa5d8c42,
+        type: 3}
       propertyPath: playerShooting
       value: 
       objectReference: {fileID: 554810625}
@@ -1937,6 +1942,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1712587270}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &580891255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 53133104252205515, guid: 0d2bec6562de3704f8d0d81eae9f6613,
+    type: 3}
+  m_PrefabInstance: {fileID: 1712587270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580891253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6850940ace128ac42835b7e14093b311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589069187
 GameObject:
   m_ObjectHideFlags: 0

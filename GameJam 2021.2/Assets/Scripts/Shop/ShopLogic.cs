@@ -14,6 +14,11 @@ public class ShopLogic : MonoBehaviour
     [Header("To Attach")]
     [SerializeField] PlayerInput playerInput;
     [SerializeField] PlayerShooting playerShooting;
+    [SerializeField] PlayerHealth playerHealth;
+    [SerializeField] TMP_Text damageText;
+    [SerializeField] TMP_Text fireRateText;
+    [SerializeField] TMP_Text healthCurrentText;
+    [SerializeField] TMP_Text healthMaxText;
     [SerializeField] Toggle trapToggle;
     [SerializeField] Toggle upgradeToggle;
     [SerializeField] TMP_Text moneyAmountText;
@@ -51,6 +56,7 @@ public class ShopLogic : MonoBehaviour
         currentRefreshPrice = refreshPrice;
         refreshPriceText.text = currentRefreshPrice.ToString() + "$";
         DrawRandomShop();
+        RefreshStats();
     }
 
     private void Update()
@@ -122,6 +128,7 @@ public class ShopLogic : MonoBehaviour
             trapRedeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();
         }
+        RefreshStats();
     }
 
     public void BuyWeaponUpgrade(int slot)
@@ -135,6 +142,7 @@ public class ShopLogic : MonoBehaviour
             upgradeRedeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();
         }
+        RefreshStats();
     }
 
     private void ApplyRefreshDiscount()
@@ -177,5 +185,13 @@ public class ShopLogic : MonoBehaviour
         {
             upgradeLocked = false;
         }
+    }
+
+    public void RefreshStats()
+    {
+        damageText.text = playerShooting.GetCombinedDamage().ToString();
+        fireRateText.text = playerShooting.GetCombinedFireRate().ToString();
+        healthCurrentText.text = playerHealth.GetCurrentHealth().ToString();
+        healthMaxText.text = playerHealth.GetMaxHealth().ToString();
     }
 }
