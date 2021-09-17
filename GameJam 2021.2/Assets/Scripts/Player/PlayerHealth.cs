@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         playerHealth = playerMaxHealth;
+        playerUI.RefreshHealth(playerMaxHealth, playerHealth);
     }
 
     private void OnCollisionStay2D(Collision2D collision)

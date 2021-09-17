@@ -5278,6 +5278,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 53133104252205515, guid: 0d2bec6562de3704f8d0d81eae9f6613,
+        type: 3}
+      propertyPath: playerMaxHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7532255841358958904, guid: 0d2bec6562de3704f8d0d81eae9f6613,
         type: 3}
       propertyPath: weapon
