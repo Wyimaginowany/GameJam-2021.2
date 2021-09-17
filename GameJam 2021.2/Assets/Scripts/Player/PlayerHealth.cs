@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float invincibleDuration = 1f;
     [SerializeField] int playerMaxHealth = 5;
+    [SerializeField] PlayerUI playerUI;
 
     bool invincible = false;
     int playerHealth = 5;
@@ -34,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamege()
     {
         playerHealth--;
+        playerUI.RefreshHealth(playerMaxHealth, playerHealth);
         invincible = true;
         if (playerHealth <= 0)
         {

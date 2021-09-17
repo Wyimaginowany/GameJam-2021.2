@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class PlayerUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject[] heartContainers;
+    [SerializeField] GameObject[] hearts;
 
-    // Update is called once per frame
-    void Update()
+    public void RefreshHealth(int maxHealth, int currentHealth)
     {
-        
+        for (int i = 0; i < heartContainers.Length; i++)
+        {
+            if (i < maxHealth)
+            {
+                heartContainers[i].SetActive(true);
+            }
+            else
+            {
+                heartContainers[i].SetActive(false);
+            }
+
+            if (i < currentHealth)
+            {
+                hearts[i].SetActive(true);
+            }
+            else
+            {
+                hearts[i].SetActive(false);
+            }
+        }
     }
 }
