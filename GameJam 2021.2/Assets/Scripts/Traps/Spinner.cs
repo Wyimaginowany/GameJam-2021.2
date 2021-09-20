@@ -14,12 +14,16 @@ public class Spinner : MonoBehaviour
     [SerializeField] GameObjectsPool bulletsPool;
     [SerializeField] GameObject movingParts;
     [SerializeField] Transform firePoint;
+    [SerializeField] AudioClip shootSound;
 
+    AudioSource audioSource;
     GameManager gameManager;
     float lastFired = 0f;
+    bool oddShot = true;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -36,6 +40,10 @@ public class Spinner : MonoBehaviour
     {
         if (Time.time - lastFired > 1 / fireRate)
         {
+            if (oddShot)
+            {
+                audioSource.PlayOneShot(shootSound);
+            }
             lastFired = Time.time;
             var bullet = bulletsPool.GetBullet();
             bullet.GetComponent<Bullet>().SetBulletDamage(damage);
@@ -44,6 +52,7 @@ public class Spinner : MonoBehaviour
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
+            oddShot = !oddShot;
         }
     }
 }

@@ -7,12 +7,15 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float invincibleDuration = 1f;
     [SerializeField] int playerMaxHealth = 5;
     [SerializeField] PlayerUI playerUI;
+    [SerializeField] AudioClip hitSound;
 
+    AudioSource audioSource;
     bool invincible = false;
     int playerHealth = 5;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         playerHealth = playerMaxHealth;
         playerUI.RefreshHealth(playerMaxHealth, playerHealth);
     }
@@ -35,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamege()
     {
+        audioSource.PlayOneShot(hitSound);
         playerHealth--;
         playerUI.RefreshHealth(playerMaxHealth, playerHealth);
         invincible = true;

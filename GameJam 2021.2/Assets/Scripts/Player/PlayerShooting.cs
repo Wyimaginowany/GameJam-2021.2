@@ -15,11 +15,13 @@ public class PlayerShooting : MonoBehaviour
 
     PlayerHealth playerHealth;
     float lastFired = 0f;
+    AudioSource audioSource;
 
     private void Start()
     {
         weapon.SpawnWeapon(hand);
         playerHealth = GetComponent<PlayerHealth>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Shoot()
@@ -34,6 +36,7 @@ public class PlayerShooting : MonoBehaviour
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidbody.AddForce(firePoint.transform.up * weapon.bulletSpeed, ForceMode2D.Impulse);
+            audioSource.PlayOneShot(weapon.shootSound);
         }     
     }
 

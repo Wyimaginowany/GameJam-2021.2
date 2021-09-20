@@ -15,13 +15,16 @@ public class Waver : MonoBehaviour
     [SerializeField] GameObjectsPool bulletsPool;
     [SerializeField] GameObject movingParts;
     [SerializeField] Transform firePoint;
+    [SerializeField] AudioClip shootSound;
 
+    AudioSource audioSource;
     GameManager gameManager;
     float lastFired = 0f;
     float movementFactor;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         startingAngle = transform.rotation.eulerAngles.z;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -39,6 +42,7 @@ public class Waver : MonoBehaviour
     {
         if (Time.time - lastFired > 1 / fireRate)
         {
+            audioSource.PlayOneShot(shootSound);
             lastFired = Time.time;
             var bullet = bulletsPool.GetBullet();
             bullet.GetComponent<Bullet>().SetBulletDamage(damage);

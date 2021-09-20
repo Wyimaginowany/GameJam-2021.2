@@ -12,7 +12,9 @@ public class BouncingSaw : MonoBehaviour
 
     [Header("To Attach")]
     [SerializeField] GameObject sawGFX;
+    [SerializeField] AudioClip bounceSound;
 
+    AudioSource audioSource;
     bool gameStarted = false;
     GameManager gameManager;
     Vector2 startForce = new Vector2(5f, 3f);
@@ -20,6 +22,7 @@ public class BouncingSaw : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -55,7 +58,7 @@ public class BouncingSaw : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        audioSource.PlayOneShot(bounceSound);
         Vector2 velocityTweak = new Vector2
         (Random.Range(-randomFactor, randomFactor),
          Random.Range(-randomFactor, randomFactor));

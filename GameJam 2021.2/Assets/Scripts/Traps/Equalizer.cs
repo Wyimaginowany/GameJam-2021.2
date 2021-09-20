@@ -13,7 +13,9 @@ public class Equalizer : MonoBehaviour
     [SerializeField] GameObjectsPool bulletsPool;
     [SerializeField] GameObject movingParts;
     [SerializeField] Transform firePoint;
+    [SerializeField] AudioClip shootSound;
 
+    AudioSource audioSource;
     GameManager gameManager;
     GameObject player;
     GameObject[] enemies;
@@ -21,6 +23,7 @@ public class Equalizer : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = gameManager.GetPlayer();
     }
@@ -45,6 +48,7 @@ public class Equalizer : MonoBehaviour
     {
         if (Time.time - lastFired > 1 / fireRate)
         {
+            audioSource.PlayOneShot(shootSound);
             lastFired = Time.time;
             var bullet = bulletsPool.GetBullet();
             bullet.GetComponent<Bullet>().SetBulletDamage(damage);

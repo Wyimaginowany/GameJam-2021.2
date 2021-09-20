@@ -794,6 +794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4916833991382234259}
+  - component: {fileID: 965022372387758339}
   - component: {fileID: 1341328205448414872}
   - component: {fileID: 8160697887540119561}
   - component: {fileID: 5086561001762156172}
@@ -821,6 +822,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!167 &965022372387758339
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8675246479845781883}
+  m_Enabled: 1
+  m_MinDistance: 10
+  m_MaxDistance: 15
+  m_ReverbPreset: 1
+  m_Room: -1000
+  m_RoomHF: -100
+  m_DecayTime: 1.49
+  m_DecayHFRatio: 0.83
+  m_Reflections: -2602
+  m_ReflectionsDelay: 0.007
+  m_Reverb: 200
+  m_ReverbDelay: 0.011
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!50 &1341328205448414872
 Rigidbody2D:
   serializedVersion: 4
@@ -906,3 +931,5 @@ MonoBehaviour:
   circleColliders:
   - {fileID: 8160697887540119561}
   - {fileID: 5003486054184423839}
+  hitSound: {fileID: 8300000, guid: 7b345bfd58fa2e442b2d10589fa1456e, type: 3}
+  deathSound: {fileID: 8300000, guid: 2bc354bdf195a934ba62eb08df61b369, type: 3}

@@ -13,6 +13,7 @@ public class Weapon : ScriptableObject
     [Header("To Attach")]
     public GameObject weaponPrefab;
     public GameObject bulletPrefab;
+    public AudioClip shootSound;
 
     public void SpawnWeapon(Transform hand)
     {

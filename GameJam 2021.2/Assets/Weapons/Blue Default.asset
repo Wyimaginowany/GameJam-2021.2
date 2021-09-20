@@ -19,3 +19,4 @@ MonoBehaviour:
     type: 3}
   bulletPrefab: {fileID: 6643730351185338275, guid: bcb211ad40b6045488956f415069ff75,
     type: 3}
+  shootSound: {fileID: 8300000, guid: 3455c5a73da8f1c40a69b701492cfdbf, type: 3}
