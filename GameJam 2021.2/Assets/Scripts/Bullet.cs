@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour, IGameObjectPolled
 {
     private float damage;
 
-
     private GameObjectsPool pool;
     public GameObjectsPool Pool
     {

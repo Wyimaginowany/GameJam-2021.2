@@ -76,6 +76,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #region For other scripts
+
     public void SetState(GameState newGameState)
     {
         currentGameState = newGameState;
@@ -103,4 +105,6 @@ public class GameManager : MonoBehaviour
         shopUI.GetComponent<ShopLogic>().RefreshStats();
         shopUI.SetActive(true);
     }
+
+    #endregion
 }

@@ -32,7 +32,6 @@ public class UpgradeSlot : MonoBehaviour
         {
             element.SetActive(false);
         }
-        //weaponIconPrefab.SetActive(false);
     }
 
     public void ShowWeapon()

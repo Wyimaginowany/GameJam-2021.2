@@ -591,5 +591,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c3cdb70e9c9314d82bf8c5ac7ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleDuration: 2
-  timer: 0
+  idleDuration: 2.4

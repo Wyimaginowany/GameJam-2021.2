@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowingBullet : MonoBehaviour
 {
     private float speed;
-    public GameObject enemy;
+    GameObject enemy;
 
     private void Update()
     {
@@ -17,7 +17,6 @@ public class FollowingBullet : MonoBehaviour
         }
 
         transform.position += speed * Time.deltaTime * transform.up;
-
     }
 
     public void CreateBullet(float speed, GameObject enemy)

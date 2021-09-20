@@ -59,19 +59,7 @@ public class ShopLogic : MonoBehaviour
         RefreshStats();
     }
 
-    private void Update()
-    {
-        moneyAmountText.text = curretMoneyAmount.ToString() + "$";
-    }
-
-    public void DrawRandomShop()
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            DrawRandomTrap(i);
-            DrawRandomUpgrade(i);
-        }
-    }
+    #region Traps
 
     private void DrawRandomTrap(int i)
     {
@@ -82,28 +70,6 @@ public class ShopLogic : MonoBehaviour
             trapSlots[i].GetComponent<TrapSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice(), selectedTemplate.GetTrapIcon());
             trapRedeemedSlots[i].SetActive(false);
             trapSlots[i].SetActive(true);
-        }
-    }
-
-    private void DrawRandomUpgrade(int i)
-    {
-        if (!upgradeLocked)
-        {
-            chosenUpgrades[i] = upgradeTemplates[Random.Range(0, upgradeTemplates.Length)];
-            upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price, chosenUpgrades[i].upgradeIcon);
-            upgradeRedeemedSlots[i].SetActive(false);
-            upgradeSlots[i].SetActive(true);
-        }
-    }
-
-    public void RefreshShop()
-    {
-        if (curretMoneyAmount >= currentRefreshPrice && !(trapLocked && upgradeLocked))
-        {
-            DrawRandomShop();
-            curretMoneyAmount -= currentRefreshPrice;
-            currentRefreshPrice = refreshPrice;
-            refreshPriceText.text = currentRefreshPrice.ToString() + "$";
         }
     }
 
@@ -123,12 +89,27 @@ public class ShopLogic : MonoBehaviour
             else
             {
                 template.SpawnTrap();
-            } 
+            }
             trapSlots[slot].GetComponent<TrapSlot>().HideTrap();
             trapRedeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();
         }
         RefreshStats();
+    }
+
+    #endregion
+
+    #region Upgrades
+
+    private void DrawRandomUpgrade(int i)
+    {
+        if (!upgradeLocked)
+        {
+            chosenUpgrades[i] = upgradeTemplates[Random.Range(0, upgradeTemplates.Length)];
+            upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price, chosenUpgrades[i].upgradeIcon);
+            upgradeRedeemedSlots[i].SetActive(false);
+            upgradeSlots[i].SetActive(true);
+        }
     }
 
     public void BuyWeaponUpgrade(int slot)
@@ -143,6 +124,32 @@ public class ShopLogic : MonoBehaviour
             ApplyRefreshDiscount();
         }
         RefreshStats();
+    }
+
+    #endregion
+
+    #region Shop
+
+    public void DrawRandomShop()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            DrawRandomTrap(i);
+            DrawRandomUpgrade(i);
+        }
+    }
+
+    public void RefreshShop()
+    {
+        if (curretMoneyAmount >= currentRefreshPrice && !(trapLocked && upgradeLocked))
+        {
+            DrawRandomShop();
+            curretMoneyAmount -= currentRefreshPrice;
+            currentRefreshPrice = refreshPrice;
+            refreshPriceText.text = currentRefreshPrice.ToString() + "$";
+            RefreshStats();
+        }
+        
     }
 
     private void ApplyRefreshDiscount()
@@ -193,5 +200,9 @@ public class ShopLogic : MonoBehaviour
         fireRateText.text = playerShooting.GetCombinedFireRate().ToString();
         healthCurrentText.text = playerHealth.GetCurrentHealth().ToString();
         healthMaxText.text = playerHealth.GetMaxHealth().ToString();
+        moneyAmountText.text = curretMoneyAmount.ToString();
     }
+
+    #endregion
+
 }

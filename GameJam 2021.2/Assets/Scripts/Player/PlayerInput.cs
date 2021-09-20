@@ -33,7 +33,6 @@ public class PlayerInput : MonoBehaviour
 
         mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
 
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)

@@ -849,9 +849,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childPrefab:
-  - {fileID: 8675246479845781883, guid: c6660b60c99affd4298ca7a369f14ccc, type: 3}
-  - {fileID: 8675246479845781883, guid: fa896b6cb311fa147959c6f862bc98ca, type: 3}
   - {fileID: 8675246479845781883, guid: 662cbb8ce150a2e43a90672504ce7b94, type: 3}
+  - {fileID: 8675246479845781883, guid: fa896b6cb311fa147959c6f862bc98ca, type: 3}
+  - {fileID: 8675246479845781883, guid: c6660b60c99affd4298ca7a369f14ccc, type: 3}
   spawnPoints:
   - {fileID: 6189396105860679604}
   - {fileID: 4303857843105221147}
