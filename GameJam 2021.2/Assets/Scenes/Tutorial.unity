@@ -1682,6 +1682,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2968757073289250475, guid: dcd325ca310b597478e80462fa5d8c42,
         type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 1302247374}
+    - target: {fileID: 2968757073289250475, guid: dcd325ca310b597478e80462fa5d8c42,
+        type: 3}
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 2029524861}
@@ -4302,6 +4307,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1302247374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2482965315579468230, guid: 0d2bec6562de3704f8d0d81eae9f6613,
+    type: 3}
+  m_PrefabInstance: {fileID: 1712587270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1318287119
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,6 +5891,11 @@ PrefabInstance:
       propertyPath: shopUI
       value: 
       objectReference: {fileID: 1746210363}
+    - target: {fileID: 2101882866736301757, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 1302247374}
     - target: {fileID: 2101882866736301757, guid: d4caa86254b5935409677e4362646ec7,
         type: 3}
       propertyPath: gameStages.Array.size

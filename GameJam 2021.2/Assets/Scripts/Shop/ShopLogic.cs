@@ -15,6 +15,8 @@ public class ShopLogic : MonoBehaviour
     [SerializeField] PlayerInput playerInput;
     [SerializeField] PlayerShooting playerShooting;
     [SerializeField] PlayerHealth playerHealth;
+    [SerializeField] GameObject playerUI;
+    [Space(10)]
     [SerializeField] TMP_Text damageText;
     [SerializeField] TMP_Text fireRateText;
     [SerializeField] TMP_Text healthCurrentText;
@@ -169,6 +171,7 @@ public class ShopLogic : MonoBehaviour
     public void StartTheGameAlready()
     {
         gameObject.SetActive(false);
+        playerUI.SetActive(true);
         gameManager.SetState(GameState.CombatPhase);
         gameManager.StartNextStage();
     }

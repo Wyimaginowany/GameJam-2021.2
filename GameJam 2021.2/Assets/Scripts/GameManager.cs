@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("To Attach")]
     [SerializeField] GameObject shopUI;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject playerUI;
 
     int currentStage = 0;
     int spawnersLeft;
@@ -103,6 +104,7 @@ public class GameManager : MonoBehaviour
         SetState(GameState.BuildPhase);
         //move player to center
         shopUI.GetComponent<ShopLogic>().RefreshStats();
+        playerUI.SetActive(false);
         shopUI.SetActive(true);
     }
 
