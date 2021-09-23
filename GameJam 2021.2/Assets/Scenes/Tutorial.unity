@@ -5380,6 +5380,12 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.282
       objectReference: {fileID: 0}
+    - target: {fileID: 8699328891773346052, guid: 0d2bec6562de3704f8d0d81eae9f6613,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3716697031394408365, guid: f8c88de0fb19df444bc32d84fc13f560,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2bec6562de3704f8d0d81eae9f6613, type: 3}
 --- !u!1 &1746210363 stripped
@@ -5881,6 +5887,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 689644625669949930, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3716697031394408365, guid: f8c88de0fb19df444bc32d84fc13f560,
+        type: 2}
     - target: {fileID: 2101882866736301757, guid: d4caa86254b5935409677e4362646ec7,
         type: 3}
       propertyPath: player

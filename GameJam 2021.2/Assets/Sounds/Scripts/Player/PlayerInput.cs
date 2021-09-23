@@ -55,7 +55,7 @@ public class PlayerInput : MonoBehaviour
 
         if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && !isPaused)
             {
                 playerShooting.Shoot();
             }
