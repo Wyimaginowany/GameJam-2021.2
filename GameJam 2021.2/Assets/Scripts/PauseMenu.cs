@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject[] thingsToHide;
+    [SerializeField] LevelLoader loader;
+
+    public void RefreshPauseMenu()
+    {
+        foreach (GameObject thing in thingsToHide)
+        {
+            thing.SetActive(false);
+        }
+        pauseMenu.SetActive(true);
+    }
+
     public void Exit()
     {
         Application.Quit();
@@ -12,18 +25,14 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartLevel()
     {
-        //ask if player is sure
-        //reload the scene
+        Time.timeScale = 1f;
+        loader.LoadClickedLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToMenu()
     {
-        //ask if player is sure
-        //load menu scene
+        Time.timeScale = 1f;
+        loader.LoadClickedLevel(0);
     }
 
-    public void ShowOptions()
-    {
-        //show options XD
-    }
 }

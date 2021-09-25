@@ -112,6 +112,7 @@ public class PlayerInput : MonoBehaviour
             shop.SetActive(true);
         }
 
+        pauseMenu.GetComponent<PauseMenu>().RefreshPauseMenu();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
