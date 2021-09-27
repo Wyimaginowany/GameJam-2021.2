@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShelodDeathrattle : MonoBehaviour
+public class ShelobDeathrattle : MonoBehaviour
 {
     [SerializeField] GameObject poolPrefab;
     [SerializeField] Transform spawnPoint;

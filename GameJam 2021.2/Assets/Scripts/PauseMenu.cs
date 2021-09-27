@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject playerUI;
     [SerializeField] GameObject[] thingsToHide;
     [SerializeField] LevelLoader loader;
 
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMenu()
     {
+        playerUI.SetActive(false);
         Time.timeScale = 1f;
         loader.LoadClickedLevel(0);
     }

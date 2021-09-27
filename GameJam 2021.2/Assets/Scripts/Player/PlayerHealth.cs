@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy") && !invincible)
+        if (collision.collider.CompareTag("Enemy"))
         {
             TakeDamege();
         }
@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Pool") && !invincible)
+        if (collision.gameObject.CompareTag("Pool"))
         {
             TakeDamege();
         }
@@ -38,20 +38,24 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamege()
     {
-        audioSource.PlayOneShot(hitSound);
-        playerHealth--;
-        playerUI.RefreshHealth(playerMaxHealth, playerHealth);
-        invincible = true;
-        if (playerHealth <= 0)
+        if (!invincible)
         {
-            HandleDeath();
+            audioSource.PlayOneShot(hitSound);
+            playerHealth--;
+            playerUI.RefreshHealth(playerMaxHealth, playerHealth);
+            invincible = true;
+            if (playerHealth <= 0)
+            {
+                HandleDeath();
+            }
+            else
+            {
+                Invoke("ActiveCollider", invincibleDuration);
+                //make it so the player can see that he is invincible
+                //turn off collider for invincibleDuration
+            }
         }
-        else
-        {
-            Invoke("ActiveCollider", invincibleDuration);
-            //make it so the player can see that he is invincible
-            //turn off collider for invincibleDuration
-        }
+
     }
 
     private void HandleDeath()
