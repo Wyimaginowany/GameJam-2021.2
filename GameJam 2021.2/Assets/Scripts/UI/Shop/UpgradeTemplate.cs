@@ -9,6 +9,9 @@ public class UpgradeTemplate : ScriptableObject
     public string upgradeName;
     public int price = 50;
     public float amount = 1f;
+    public float secondAmount = 1f;
     public GameObject upgradeIcon;
+    public string firstLine;
+    public string secondLine;
 
 }

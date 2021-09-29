@@ -70,6 +70,7 @@ public class ShopLogic : MonoBehaviour
             chosenTraps[i] = trapsTepmplates[Random.Range(0, trapsTepmplates.Length)];
             TrapTemplate selectedTemplate = chosenTraps[i].GetComponent<TrapTemplate>();
             trapSlots[i].GetComponent<TrapSlot>().CreateShopSlot(selectedTemplate.GetTrapName(), selectedTemplate.GetTrapPrice(), selectedTemplate.GetTrapIcon());
+            trapSlots[i].GetComponent<TrapDescription>().SetTrapDescription(selectedTemplate.firstLine, selectedTemplate.secondLine, selectedTemplate.trapDescription);
             trapRedeemedSlots[i].SetActive(false);
             trapSlots[i].SetActive(true);
         }
@@ -108,7 +109,7 @@ public class ShopLogic : MonoBehaviour
         if (!upgradeLocked)
         {
             chosenUpgrades[i] = upgradeTemplates[Random.Range(0, upgradeTemplates.Length)];
-            upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price, chosenUpgrades[i].upgradeIcon);
+            upgradeSlots[i].GetComponent<UpgradeSlot>().CreateWeaponSlot(chosenUpgrades[i].upgradeName, chosenUpgrades[i].price, chosenUpgrades[i].upgradeIcon, chosenUpgrades[i].firstLine, chosenUpgrades[i].secondLine);
             upgradeRedeemedSlots[i].SetActive(false);
             upgradeSlots[i].SetActive(true);
         }
@@ -120,7 +121,7 @@ public class ShopLogic : MonoBehaviour
         if (curretMoneyAmount >= price)
         {
             curretMoneyAmount -= price;
-            playerShooting.Upgrade(chosenUpgrades[slot].upgradeType, chosenUpgrades[slot].amount);
+            playerShooting.Upgrade(chosenUpgrades[slot].upgradeType, chosenUpgrades[slot].amount, chosenUpgrades[slot].secondAmount);
             upgradeSlots[slot].GetComponent<UpgradeSlot>().HideWeapon();
             upgradeRedeemedSlots[slot].SetActive(true);
             ApplyRefreshDiscount();

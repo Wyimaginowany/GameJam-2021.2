@@ -515,7 +515,7 @@ MonoBehaviour:
   spiningSpeed: 200
   fireRate: 10
   bulletSpeed: 20
-  damage: 100
+  damage: 30
   bulletsPool: {fileID: 7296928610637776409}
   movingParts: {fileID: 1763489522687818514}
   firePoint: {fileID: 5922487253934006896}

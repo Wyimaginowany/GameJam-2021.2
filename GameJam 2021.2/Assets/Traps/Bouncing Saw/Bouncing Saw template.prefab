@@ -50,6 +50,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   trapPrice: 50
+  firstLine: Damage 100
+  secondLine: ' '
+  trapDescription: Flies around the screen and bounces off the edges
   finalObject: {fileID: 4439092113914806727, guid: 020b20f1ea1b22e4c9319ddea4c7417e,
     type: 3}
   objectsToRotate: {fileID: 0}

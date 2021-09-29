@@ -207,11 +207,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapName: Equalizer
+  isPlaceable: 1
   trapsLayer:
     serializedVersion: 2
     m_Bits: 4096
-  gridSize: 3
   trapPrice: 50
+  firstLine: Damage 15
+  secondLine: Firerate 4
+  trapDescription: Shoots to the nearest enemy to the player
   finalObject: {fileID: 4634451948489922851, guid: 68756f12da6576d409ea85beadba8649,
     type: 3}
   objectsToRotate: {fileID: 7611569106187860273}

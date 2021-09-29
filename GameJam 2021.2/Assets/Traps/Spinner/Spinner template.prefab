@@ -321,11 +321,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapName: Spinner
+  isPlaceable: 1
   trapsLayer:
     serializedVersion: 2
     m_Bits: 4096
-  gridSize: 3
   trapPrice: 30
+  firstLine: Damage 30
+  secondLine: Firerate 10
+  trapDescription: Spins and shoot at the same time
   finalObject: {fileID: 8157441076167941365, guid: b02793c19c239da448a19fffc80a9029,
     type: 3}
   objectsToRotate: {fileID: 7421036170974221720}

@@ -40,7 +40,7 @@ public class PlayerShooting : MonoBehaviour
         }     
     }
 
-    public void Upgrade(UpgradeTypes type, float value)
+    public void Upgrade(UpgradeTypes type, float value, float secondValue)
     {
         switch(type)
         {
@@ -52,6 +52,10 @@ public class PlayerShooting : MonoBehaviour
                 break;
             case UpgradeTypes.Health:
                 playerHealth.Upgrade((int)value);
+                break;
+            case UpgradeTypes.DamageFireRate:
+                damageUpgrade += value;
+                fireRateUpgrade += secondValue;
                 break;
         }
     }

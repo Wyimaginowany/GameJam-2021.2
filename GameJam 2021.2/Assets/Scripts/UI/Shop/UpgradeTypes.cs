@@ -2,5 +2,6 @@
 {
     Damage,
     FireRate,
-    Health
+    Health,
+    DamageFireRate,
 }
