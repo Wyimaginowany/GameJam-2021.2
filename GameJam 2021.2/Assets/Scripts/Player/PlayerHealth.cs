@@ -21,9 +21,10 @@ public class PlayerHealth : MonoBehaviour
         playerUI.RefreshHealth(playerMaxHealth, playerHealth);
     }
 
+
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy"))
+        if (collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("EnemyBullet"))
         {
             TakeDamege();
         }

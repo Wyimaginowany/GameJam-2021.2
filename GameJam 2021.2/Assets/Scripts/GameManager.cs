@@ -6,10 +6,10 @@ public class GameManager : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] int gridSize = 3;
-    public float trapMinX;
-    public float trapMaxX;
-    public float trapMinY;
-    public float trapMaxY;
+    public float trapMinX = -45f;
+    public float trapMaxX = 45f;
+    public float trapMinY = -24f;
+    public float trapMaxY = 24f;
 
 
     [Header("To Attach")]
@@ -82,6 +82,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void EndPhase()
+    {
+        //give money
+        SetState(GameState.BuildPhase);
+        //move player to center
+        shopUI.GetComponent<ShopLogic>().RefreshStats();
+        playerUI.SetActive(false);
+        shopUI.SetActive(true);
+    }
+
     #region For other scripts
 
     public void SetState(GameState newGameState)
@@ -102,15 +112,6 @@ public class GameManager : MonoBehaviour
     public int GetGridSize()
     {
         return gridSize;
-    }
-
-    public void EndPhase()
-    {
-        SetState(GameState.BuildPhase);
-        //move player to center
-        shopUI.GetComponent<ShopLogic>().RefreshStats();
-        playerUI.SetActive(false);
-        shopUI.SetActive(true);
     }
 
     #endregion
