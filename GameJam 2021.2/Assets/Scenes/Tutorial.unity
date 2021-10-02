@@ -6021,6 +6021,46 @@ PrefabInstance:
       objectReference: {fileID: 1302247374}
     - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
         type: 3}
+      propertyPath: trapMaxX
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: trapMaxY
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: trapMinX
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: trapMinY
+      value: -24
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: positionRestrictX.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: positionRestrictX.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: positionRestrictY.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: positionRestrictY.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
       propertyPath: gameStages.Array.size
       value: 2
       objectReference: {fileID: 0}

@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] int gridSize = 3;
+    public float trapMinX;
+    public float trapMaxX;
+    public float trapMinY;
+    public float trapMaxY;
+
 
     [Header("To Attach")]
     [SerializeField] GameObject shopUI;

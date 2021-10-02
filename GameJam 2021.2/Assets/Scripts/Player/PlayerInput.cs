@@ -60,7 +60,7 @@ public class PlayerInput : MonoBehaviour
                 playerShooting.Shoot();
             }
         }
-        else if (gameManager.GetCurrentState() == GameState.BuildPhase)
+        else if (gameManager.GetCurrentState() == GameState.BuildPhase && !isPaused)
         {
             if (selectedTrap != null)
             {
@@ -107,7 +107,7 @@ public class PlayerInput : MonoBehaviour
 
     public void Resume()
     {
-        if (gameManager.GetCurrentState() == GameState.BuildPhase)
+        if (gameManager.GetCurrentState() == GameState.BuildPhase && selectedTrap == null)
         {
             shop.SetActive(true);
         }

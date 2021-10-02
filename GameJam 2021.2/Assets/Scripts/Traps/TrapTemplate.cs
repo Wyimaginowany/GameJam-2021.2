@@ -12,18 +12,28 @@ public class TrapTemplate : MonoBehaviour
     public string firstLine;
     public string secondLine;
     public string trapDescription;
+    public float trapMinX;
+    public float trapMaxX;
+    public float trapMinY;
+    public float trapMaxY;
 
     [Header("To Attach")]
     [SerializeField] GameObject finalObject;
     [SerializeField] GameObject objectsToRotate;
     [SerializeField] GameObject trapIcon;
 
+    GameManager gameManager;
     int gridSize;
     float rotation = 0f;
 
     private void Start()
     {
-        gridSize = GameObject.Find("GameManager").GetComponent<GameManager>().GetGridSize();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        trapMinX = gameManager.trapMinX;
+        trapMaxX = gameManager.trapMaxX;
+        trapMinY = gameManager.trapMinY;
+        trapMaxY = gameManager.trapMaxY;
+        gridSize = gameManager.GetGridSize();
     }
 
     public void PlaceTrap(GameObject shop)
@@ -41,8 +51,8 @@ public class TrapTemplate : MonoBehaviour
     public void SnapToGrid(Vector2 mousePosition)
     {
         transform.position = new Vector2(
-            Mathf.RoundToInt(mousePosition.x / gridSize) * gridSize,
-            Mathf.RoundToInt(mousePosition.y / gridSize) * gridSize);
+            Mathf.RoundToInt(Mathf.Clamp(mousePosition.x, trapMinX, trapMaxX) / gridSize) * gridSize,
+            Mathf.RoundToInt(Mathf.Clamp(mousePosition.y, trapMinY, trapMaxY) / gridSize) * gridSize);
     }
 
     public void Rotate()
