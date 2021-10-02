@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShelobDeathrattle : MonoBehaviour
+public class ShelobDeathrattle : MonoBehaviour, IDeathrattle
 {
     [SerializeField] GameObject poolPrefab;
     [SerializeField] Transform spawnPoint;
 
-    private void OnDestroy()
+    public void Deathrattle()
     {
         Instantiate(poolPrefab, spawnPoint.position, spawnPoint.rotation);
     }

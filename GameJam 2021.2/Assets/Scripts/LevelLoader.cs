@@ -10,6 +10,7 @@ public class LevelLoader : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        Time.timeScale = 1f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -25,7 +26,7 @@ public class LevelLoader : MonoBehaviour
     {
         animator.SetTrigger("start");
 
-        yield return new WaitForSeconds(transitionTime);
+        yield return new WaitForSecondsRealtime(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
     }

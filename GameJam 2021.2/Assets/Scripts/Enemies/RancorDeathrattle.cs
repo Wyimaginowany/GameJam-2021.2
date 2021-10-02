@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RancorDeathrattle : MonoBehaviour
+public class RancorDeathrattle : MonoBehaviour, IDeathrattle
 {
     [SerializeField] float bulletSpeed = 10f;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform spawnPoint;
 
-    private void OnDestroy()
+    public void Deathrattle()
     {
         FireBullet(Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity), Vector3.left);
         FireBullet(Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity), Vector3.right);

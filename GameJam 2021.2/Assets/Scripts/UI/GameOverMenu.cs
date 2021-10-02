@@ -17,7 +17,6 @@ public class GameOverMenu : MonoBehaviour
     public void RestartLevel()
     {
         gameObject.SetActive(false);
-        Time.timeScale = 1f;
         loader.LoadClickedLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -25,7 +24,6 @@ public class GameOverMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
         playerUI.SetActive(false);
-        Time.timeScale = 1f;
         loader.LoadClickedLevel(0);
     }
 }

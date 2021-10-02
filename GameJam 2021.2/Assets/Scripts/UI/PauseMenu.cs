@@ -26,14 +26,12 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
         loader.LoadClickedLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToMenu()
     {
         playerUI.SetActive(false);
-        Time.timeScale = 1f;
         loader.LoadClickedLevel(0);
     }
 

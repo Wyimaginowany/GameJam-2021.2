@@ -48,6 +48,10 @@ public class EnemyStats : MonoBehaviour
             Destroy(collider);
         }
 
+        if (TryGetComponent<IDeathrattle>(out var deathrattle))
+        {
+            deathrattle.Deathrattle();
+        }
         Destroy(gameObject, deathSound.length);
     }
 
@@ -56,5 +60,9 @@ public class EnemyStats : MonoBehaviour
         return isAlive;
     }
 
+}
 
+public interface IDeathrattle
+{
+    void Deathrattle();
 }
