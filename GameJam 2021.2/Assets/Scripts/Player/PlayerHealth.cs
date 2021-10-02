@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float invincibleDuration = 1f;
     [SerializeField] int playerMaxHealth = 5;
     [SerializeField] PlayerUI playerUI;
+    [SerializeField] GameObject gameOverUI;
     [SerializeField] AudioClip hitSound;
 
     AudioSource audioSource;
@@ -60,10 +61,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void HandleDeath()
     {
-        //destroy player
-        //show death ui
-        //stop all enemies and animations
-        Debug.Log("player died");
+        Time.timeScale = 0f;
+        gameOverUI.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void ActiveCollider()

@@ -16,5 +16,8 @@ MonoBehaviour:
   upgradeName: Barrel
   price: 50
   amount: 20
+  secondAmount: 1
   upgradeIcon: {fileID: 206422092453109370, guid: a9477bac3798eb745a466e263e0a08a6,
     type: 3}
+  firstLine: Damage +20
+  secondLine: ' '
