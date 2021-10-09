@@ -3683,7 +3683,7 @@ PrefabInstance:
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
@@ -3723,7 +3723,7 @@ PrefabInstance:
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.data[0].spawnRate
-      value: 8
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
@@ -3739,7 +3739,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].enemyPrefab
       value: 
-      objectReference: {fileID: 8675246479845781883, guid: 927da502ce261c145ba2abc34ecf06b3,
+      objectReference: {fileID: 4871041299754370379, guid: d7b8201a1fa17c54b9716ceb6212cfc3,
         type: 3}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
@@ -6003,6 +6003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101882866736301759, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
         type: 3}

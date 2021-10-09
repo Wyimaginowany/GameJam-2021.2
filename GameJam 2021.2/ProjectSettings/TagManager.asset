@@ -8,6 +8,7 @@ TagManager:
   - Shop
   - Wall
   - Pool
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
