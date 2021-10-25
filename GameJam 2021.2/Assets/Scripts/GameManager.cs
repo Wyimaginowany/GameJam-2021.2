@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject playerUI;
 
+    bool gameOver = false;
     int currentStage = 0;
     int spawnersLeft;
     GameState currentGameState = GameState.WaitingPhase;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         gameObject.name = "GameManager";
         spawnersLeft = gameStages[0].enemySpawners.Length;
+        bool gameOver = false;
     }
 
     private void Update()
@@ -115,4 +117,14 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    public bool isOver()
+    {
+        return gameOver;
+    }
+
+    public void GameOver()
+    {
+        gameOver = true;
+    }
 }

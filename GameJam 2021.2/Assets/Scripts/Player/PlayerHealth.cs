@@ -10,12 +10,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject gameOverUI;
     [SerializeField] AudioClip hitSound;
 
+    GameManager gameManager;
     AudioSource audioSource;
     bool invincible = false;
     int playerHealth = 5;
 
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         audioSource = GetComponent<AudioSource>();
         playerHealth = playerMaxHealth;
         playerUI.RefreshHealth(playerMaxHealth, playerHealth);
@@ -62,6 +64,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void HandleDeath()
     {
+        gameManager.GameOver();
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);
         Cursor.visible = true;

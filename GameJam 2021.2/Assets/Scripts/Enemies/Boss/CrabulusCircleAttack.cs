@@ -11,7 +11,7 @@ public class CrabulusCircleAttack : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         crabulusLogic = animator.GetComponent<Crabulus>();
-        timer = 7f;
+        timer = crabulusLogic.circleAttackDuration;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -31,6 +31,7 @@ public class CrabulusCircleAttack : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        crabulusLogic.timesAttacked++;
         animator.ResetTrigger("endAttack");
     }
 }

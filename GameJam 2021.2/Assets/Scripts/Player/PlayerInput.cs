@@ -9,8 +9,6 @@ public class PlayerInput : MonoBehaviour
     //to do make it automatic
     [SerializeField] Camera camera = null;
 
-    
-
     GameManager gameManager;
     GameObject selectedTrap = null;
     PlayerMovement playerMovement;
@@ -111,10 +109,13 @@ public class PlayerInput : MonoBehaviour
         {
             shop.SetActive(true);
         }
+        if (!gameManager.isOver())
+        {
+            Time.timeScale = 1f;
+        }
 
         pauseMenu.GetComponent<PauseMenu>().RefreshPauseMenu();
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
         isPaused = false;
     }
 

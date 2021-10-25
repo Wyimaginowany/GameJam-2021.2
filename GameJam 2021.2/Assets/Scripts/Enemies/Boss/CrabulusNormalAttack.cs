@@ -5,7 +5,6 @@ using UnityEngine;
 public class CrabulusNormalAttack : StateMachineBehaviour
 {
     Crabulus crabulusLogic;
-    float fireRate = 5f;
     float lastFired = 0f;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -17,12 +16,17 @@ public class CrabulusNormalAttack : StateMachineBehaviour
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Time.time - lastFired > 1 / fireRate)
+        if (Time.time - lastFired > 1 / crabulusLogic.normalAttackFireRate)
         {
             lastFired = Time.time;
             crabulusLogic.NormalAttack();
         }
         crabulusLogic.RotateToPlayer();
+    }
+
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        crabulusLogic.timesAttacked++;
     }
 
 }

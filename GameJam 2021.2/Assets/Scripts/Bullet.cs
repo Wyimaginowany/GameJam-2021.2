@@ -28,8 +28,8 @@ public class Bullet : MonoBehaviour, IGameObjectPolled
         if (collision.collider.CompareTag("Enemy"))
         {
             collision.collider.GetComponent<EnemyStats>().HandleHit(damage);
+            //collision.collider.GetComponent<IDamageable>().HandleHit(damage);
         }
-
         pool.ReturnToPool(this.gameObject);
     }
 

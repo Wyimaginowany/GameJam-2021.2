@@ -8,20 +8,25 @@ public class Crabulus : MonoBehaviour
     [SerializeField] float heatlh;
     [SerializeField] float speed;
     [SerializeField] float bulletSpeed = 10f;
-    [SerializeField] int attacksBeforeRest = 3;
+    public int attacksBeforeRest = 3;
     [Header("To attach")]
-    [SerializeField] GameObject[] circleFirePoints;
+    [SerializeField] GameObject firePoint;
     [SerializeField] GameObject[] normalFirePoints;
     [SerializeField] GameObject rotatingParts;
     [SerializeField] GameObjectsPool bulletsPool;
-    [Header("Crircle Attack")]
+    [Space(10)]
     [SerializeField] float wavingPeriod = 10f;
+    public float circleAttackDuration;
+    public float walkingDuration;
+    public float restingDuration;
+    public float normalAttackFireRate;
+
 
     Transform player;
     Vector2 destination;
     Rigidbody2D rigidbody;
     float movementFactor;
-    int timesAttacked;
+    public int timesAttacked;
 
     private void Start()
     {
@@ -39,20 +44,20 @@ public class Crabulus : MonoBehaviour
             bullet.transform.position = firePoint.transform.position;
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-            bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Force);
+            bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }
     }
 
     public void Shoot()
     {
-        foreach (GameObject firePoint in circleFirePoints)
+        for (int i =0; i < 16; i++)
         {
             var bullet = bulletsPool.GetBullet();
-            bullet.transform.rotation = firePoint.transform.rotation;
             bullet.transform.position = firePoint.transform.position;
+            bullet.transform.rotation = firePoint.transform.rotation * Quaternion.Euler(0f, 0f, i*22.5f);
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-            bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Force);
+            bulletRigidbody.AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }
     }
 
@@ -69,10 +74,6 @@ public class Crabulus : MonoBehaviour
             movementFactor * 90);
     }
 
-    public void EndAttack()
-    {
-        timesAttacked++;
-    }
 
     public void MoveToPlayer()
     {
