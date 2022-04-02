@@ -54,7 +54,7 @@ public class ShopLogic : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        curretMoneyAmount = startingMoneyAmount;
+        //curretMoneyAmount = startingMoneyAmount;
         currentRefreshPrice = refreshPrice;
         refreshPriceText.text = currentRefreshPrice.ToString() + "$";
         DrawRandomShop();
@@ -205,6 +205,13 @@ public class ShopLogic : MonoBehaviour
         healthCurrentText.text = playerHealth.GetCurrentHealth().ToString();
         healthMaxText.text = playerHealth.GetMaxHealth().ToString();
         moneyAmountText.text = curretMoneyAmount.ToString();
+    }
+
+    public void GiveMoneyToPlayer(int amout)
+    {
+        curretMoneyAmount += amout;
+        Debug.Log(curretMoneyAmount);
+        RefreshStats();
     }
 
     #endregion

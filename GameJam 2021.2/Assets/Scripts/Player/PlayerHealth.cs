@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
 
     GameManager gameManager;
     AudioSource audioSource;
-    bool invincible = false;
+    public bool invincible = false;
     int playerHealth = 5;
 
     private void Start()

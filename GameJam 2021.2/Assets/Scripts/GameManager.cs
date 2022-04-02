@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public class GameStages
     {
         public GameObject[] enemySpawners;
+        public int moneyReward;
     }
     public GameStages[] gameStages;
 
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void StartNextStage()
     {
+        player.GetComponent<PlayerHealth>().invincible = false;
         currentStage++;
         if (currentStage <= gameStages.Length - 1)
         {
@@ -86,12 +88,14 @@ public class GameManager : MonoBehaviour
 
     public void EndPhase()
     {
-        //give money
+        player.GetComponent<PlayerHealth>().invincible = true;
         SetState(GameState.BuildPhase);
         //move player to center
-        shopUI.GetComponent<ShopLogic>().RefreshStats();
         playerUI.SetActive(false);
         shopUI.SetActive(true);
+        Debug.Log("Current stage :" + currentStage);
+        shopUI.GetComponent<ShopLogic>().GiveMoneyToPlayer(gameStages[currentStage].moneyReward);
+        shopUI.GetComponent<ShopLogic>().RefreshStats();
     }
 
     #region For other scripts

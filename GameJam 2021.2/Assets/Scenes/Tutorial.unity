@@ -3713,33 +3713,43 @@ PrefabInstance:
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.data[1].amount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.data[2].amount
-      value: 1
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
+        type: 3}
+      propertyPath: waves.Array.data[3].amount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.data[0].spawnRate
-      value: 100
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.data[1].spawnRate
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.data[2].spawnRate
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
+        type: 3}
+      propertyPath: waves.Array.data[3].spawnRate
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
       propertyPath: waves.Array.data[0].enemyPrefab
       value: 
-      objectReference: {fileID: 4871041299754370379, guid: d7b8201a1fa17c54b9716ceb6212cfc3,
+      objectReference: {fileID: 8675246479845781883, guid: 8ceea660e0bd9874085e3a4cdc2ce9ac,
         type: 3}
     - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
         type: 3}
@@ -3751,7 +3761,13 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[2].enemyPrefab
       value: 
-      objectReference: {fileID: 8675246479845781883, guid: 927da502ce261c145ba2abc34ecf06b3,
+      objectReference: {fileID: 8675246479845781883, guid: 3aa35ef336796d944a94e1c6e076ba3a,
+        type: 3}
+    - target: {fileID: 6109021759202261371, guid: e3e07b8ce9c1898428aaa0d22e2aa547,
+        type: 3}
+      propertyPath: waves.Array.data[3].enemyPrefab
+      value: 
+      objectReference: {fileID: 8793444557538152904, guid: e92a554673b397444990880c2dfe023e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3e07b8ce9c1898428aaa0d22e2aa547, type: 3}
@@ -6071,6 +6087,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
         type: 3}
+      propertyPath: gameStages.Array.data[0].moneyReward
+      value: 6969
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
+      propertyPath: gameStages.Array.data[1].moneyReward
+      value: 2137
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114061093913550288, guid: d4caa86254b5935409677e4362646ec7,
+        type: 3}
       propertyPath: gameStages.Array.data[0].enemySpawners.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6939,6 +6965,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133759555938683383, guid: d0f01fba068016948bdcde4a9186979f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133759555938683383, guid: d0f01fba068016948bdcde4a9186979f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133759555938683383, guid: d0f01fba068016948bdcde4a9186979f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0f01fba068016948bdcde4a9186979f, type: 3}
