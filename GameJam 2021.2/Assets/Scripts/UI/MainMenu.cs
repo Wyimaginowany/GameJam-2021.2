@@ -2,20 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] AudioMixer audioMixer;
+    [SerializeField] Slider masterVolumeSlider;
+    [SerializeField] Slider musicVolumeSlider;
+    [SerializeField] Slider buttonVolumeSlider;
+    [SerializeField] Slider playerVolumeSlider;
+    [SerializeField] Slider enemyrVolumeSlider;
+
+    float masterVolume;
+    float musicVolume;
+    float buttonVolume;
+    float playerVolume;
+    float enemyVolume;
 
     public void ExitGame()
     {
         Application.Quit();
     }
 
+    private void OnEnable()
+    {
+        if (masterVolumeSlider == null) return;
+
+        audioMixer.GetFloat("master", out masterVolume);
+        masterVolumeSlider.value = masterVolume;
+
+        audioMixer.GetFloat("music", out musicVolume);
+        musicVolumeSlider.value = musicVolume;
+
+        audioMixer.GetFloat("enemy", out enemyVolume);
+        enemyrVolumeSlider.value = enemyVolume;
+
+        audioMixer.GetFloat("player", out playerVolume);
+        playerVolumeSlider.value = playerVolume;
+
+        audioMixer.GetFloat("buttons", out buttonVolume);
+        buttonVolumeSlider.value = buttonVolume;
+    }
+
     public void SetFullscreen(bool isFullscreen)
     {
-        Debug.Log(isFullscreen);
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void SetMasterVolume(float volume)
+    {
+        audioMixer.SetFloat("master", volume);
     }
 
     public void SetMusicVolume(float volume)
@@ -23,9 +59,19 @@ public class MainMenu : MonoBehaviour
         audioMixer.SetFloat("music", volume);
     }
 
-    public void SetSoundsVolume(float volume)
+    public void SetButtonSoundsVolume(float volume)
     {
-        audioMixer.SetFloat("sounds", volume);
+        audioMixer.SetFloat("buttons", volume);
+    }
+
+    public void SetPlayerVolume(float volume)
+    {
+        audioMixer.SetFloat("player", volume);
+    }
+
+    public void SetEnemyVolume(float volume)
+    {
+        audioMixer.SetFloat("enemy", volume);
     }
 
     public void ShowCredits()
