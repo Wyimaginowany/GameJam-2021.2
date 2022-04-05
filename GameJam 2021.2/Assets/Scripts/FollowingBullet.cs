@@ -11,7 +11,17 @@ public class FollowingBullet : MonoBehaviour
     {
         if (enemy != null)
         {
-            if (enemy.GetComponent<EnemyStats>().CheckIfAlive())
+            if (enemy.GetComponent<EnemyStats>() != null)
+            {
+                if (enemy.GetComponent<EnemyStats>().CheckIfAlive())
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+                }
+                
+            }
+            else
             {
                 Vector3 direction = enemy.transform.position - transform.position;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -19,6 +29,7 @@ public class FollowingBullet : MonoBehaviour
             }
         }
         
+
         transform.position += speed * Time.deltaTime * transform.up;
     }
 
