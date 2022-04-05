@@ -22,6 +22,7 @@ public class PlayerInput : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponent<PlayerShooting>();
+        gameManager.SetState(GameState.CombatPhase);
     }
 
     private void Update()
@@ -43,13 +44,13 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
-        if (gameManager.GetCurrentState() == GameState.WaitingPhase)
+        /*if (gameManager.GetCurrentState() == GameState.WaitingPhase)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 gameManager.SetState(GameState.CombatPhase);
             }
-        }
+        }*/
 
         if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {

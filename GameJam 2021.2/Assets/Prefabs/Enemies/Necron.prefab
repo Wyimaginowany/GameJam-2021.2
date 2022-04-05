@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7dee60ac6e2fa469f69b716922cd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpeed: 5
+  startingSpeed: 10
 --- !u!114 &7080137366345071141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ed729e2c37eaf45810fbf430bcde59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 100
+  enemyHealth: 20
   circleColliders:
   - {fileID: 7148964390391843963}
   - {fileID: 7553667717458964729}

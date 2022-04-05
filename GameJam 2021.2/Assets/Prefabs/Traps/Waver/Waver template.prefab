@@ -211,10 +211,14 @@ MonoBehaviour:
   trapsLayer:
     serializedVersion: 2
     m_Bits: 4096
-  trapPrice: 20
+  trapPrice: 30
   firstLine: Damage 20
   secondLine: Firerate 10
   trapDescription: "Waves back and forth at an angle of 90\xB0"
+  trapMinX: 0
+  trapMaxX: 0
+  trapMinY: 0
+  trapMaxY: 0
   finalObject: {fileID: 4310899223028015938, guid: 616f4b8d6316c6a44a11b6e69df61550,
     type: 3}
   objectsToRotate: {fileID: 7608587968076160240}

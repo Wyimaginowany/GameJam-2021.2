@@ -766,7 +766,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.214
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bc8e72befdc2a479e561b951cfd9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 1000
+  health: 30000
   speed: 13
   bulletSpeed: 16
   attacksBeforeRest: 3
@@ -890,8 +890,10 @@ MonoBehaviour:
   bulletsPool: {fileID: 4950615160480695560}
   healtBar: {fileID: 5407397586805848476}
   healthBarText: {fileID: 2463463342426456225}
+  deathSound: {fileID: 8300000, guid: a0339dc8a8a17c346930322d10b0fa03, type: 3}
+  shootSound: {fileID: 8300000, guid: 1a8a9b7e89ed56a4598dccdda43962de, type: 3}
   wavingPeriod: 8
-  circleAttackDuration: 20
+  circleAttackDuration: 12
   walkingDuration: 4.5
   restingDuration: 5
   normalAttackFireRate: 5.5

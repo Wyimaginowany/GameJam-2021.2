@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ed729e2c37eaf45810fbf430bcde59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 100
+  enemyHealth: 50
   circleColliders:
   - {fileID: 7841208756834476885}
   - {fileID: 8403416324482187927}

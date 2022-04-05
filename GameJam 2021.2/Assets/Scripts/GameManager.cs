@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject shopUI;
     [SerializeField] GameObject player;
     [SerializeField] GameObject playerUI;
+    [SerializeField] GameObject winScreen;
 
     bool gameOver = false;
     int currentStage = 0;
@@ -88,6 +89,16 @@ public class GameManager : MonoBehaviour
 
     public void EndPhase()
     {
+        if (currentStage == gameStages.Length - 1)
+        {
+            GameOver();
+            Time.timeScale = 0f;
+            winScreen.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            return;
+        }
+
         player.GetComponent<PlayerHealth>().invincible = true;
         SetState(GameState.BuildPhase);
         //move player to center

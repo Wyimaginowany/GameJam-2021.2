@@ -372,7 +372,7 @@ MonoBehaviour:
   wavingPeriod: 3
   fireRate: 10
   bulletSpeed: 20
-  damage: 20
+  damage: 25
   startingAngle: 0
   bulletsPool: {fileID: 5541305499785843037}
   movingParts: {fileID: 6817561343497894552}

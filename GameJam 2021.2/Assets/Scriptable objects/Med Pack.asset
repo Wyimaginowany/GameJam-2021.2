@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 2
   upgradeName: Med Pack
-  price: 50
+  price: 35
   amount: 1
   secondAmount: 1
   upgradeIcon: {fileID: 206422092453109370, guid: 40afb79601f96314fa27c3cfee0c3f0d,

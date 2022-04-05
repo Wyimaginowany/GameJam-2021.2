@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Crabulus : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
-    [SerializeField] float heatlh;
+    [SerializeField] float health;
     [SerializeField] float speed;
     [SerializeField] float bulletSpeed = 10f;
     public int attacksBeforeRest = 3;
@@ -19,6 +19,8 @@ public class Crabulus : MonoBehaviour, IDamageable
     [SerializeField] GameObjectsPool bulletsPool;
     [SerializeField] Slider healtBar;
     [SerializeField] TMP_Text healthBarText;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip shootSound;
     [Space(10)]
     [SerializeField] float wavingPeriod = 10f;
     public float circleAttackDuration;
@@ -33,22 +35,25 @@ public class Crabulus : MonoBehaviour, IDamageable
     Rigidbody2D rigidbody;
     float movementFactor;
     public int timesAttacked;
+    AudioSource audioSource;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         timesAttacked = 0;
         rigidbody = GetComponent<Rigidbody2D>();
-        maxHealth = heatlh;
+        maxHealth = health;
         healtBar.maxValue = maxHealth;
-        healtBar.value = heatlh;
-        healthBarText.text = heatlh + " / " + maxHealth;  
+        healtBar.value = health;
+        healthBarText.text = health + " / " + maxHealth;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void NormalAttack()
     {
         foreach (GameObject firePoint in normalFirePoints)
         {
+            audioSource.PlayOneShot(shootSound);
             var bullet = bulletsPool.GetBullet();
             bullet.transform.rotation = firePoint.transform.rotation;
             bullet.transform.position = firePoint.transform.position;
@@ -62,6 +67,7 @@ public class Crabulus : MonoBehaviour, IDamageable
     {
         for (int i =0; i < 16; i++)
         {
+            audioSource.PlayOneShot(shootSound);
             var bullet = bulletsPool.GetBullet();
             bullet.transform.position = firePoint.transform.position;
             bullet.transform.rotation = firePoint.transform.rotation * Quaternion.Euler(0f, 0f, i*22.5f);
@@ -101,26 +107,25 @@ public class Crabulus : MonoBehaviour, IDamageable
 
     public void TakeDamage(float amount)
     {
-        heatlh -= amount;
-        healtBar.value = heatlh;
-        healthBarText.text = heatlh + " / " + maxHealth;
+        health -= amount;
 
-        if (heatlh <= 0)
+        if (health <= 0)
         {
             HandleDeath();
+            health = 0;
         }
-        else
-        {
 
-        }
-        //play sound
-        //update healthbar
-        //
+        healtBar.value = health;
+        healthBarText.text = health + " / " + maxHealth;
     }
 
     private void HandleDeath()
     {
-        return;
+        if (deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+        Destroy(gameObject, deathSound.length);
     }
 }
 
