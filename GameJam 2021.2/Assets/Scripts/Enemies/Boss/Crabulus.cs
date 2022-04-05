@@ -65,9 +65,9 @@ public class Crabulus : MonoBehaviour, IDamageable
 
     public void Shoot()
     {
+        audioSource.PlayOneShot(shootSound);
         for (int i =0; i < 16; i++)
         {
-            audioSource.PlayOneShot(shootSound);
             var bullet = bulletsPool.GetBullet();
             bullet.transform.position = firePoint.transform.position;
             bullet.transform.rotation = firePoint.transform.rotation * Quaternion.Euler(0f, 0f, i*22.5f);

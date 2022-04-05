@@ -23,12 +23,12 @@ public class Bullet : MonoBehaviour, IGameObjectPolled
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable damageable = collision.collider.GetComponent<IDamageable>();
+        IDamageable damageable = collision.GetComponent<IDamageable>();
         if (damageable != null)
         {
-            collision.collider.GetComponent<IDamageable>().TakeDamage(damage);
+            collision.GetComponent<IDamageable>().TakeDamage(damage);
         }
         /*if (collision.collider.CompareTag("Enemy"))
         {
