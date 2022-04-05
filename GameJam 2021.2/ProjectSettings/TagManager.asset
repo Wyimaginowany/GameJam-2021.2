@@ -9,6 +9,9 @@ TagManager:
   - Wall
   - Pool
   - EnemyBullet
+  - Equalizer
+  - Waver
+  - Spinner
   layers:
   - Default
   - TransparentFX

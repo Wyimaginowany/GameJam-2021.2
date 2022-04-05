@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 7866836962125279053}
   m_Layer: 12
   m_Name: Spinner
-  m_TagString: Untagged
+  m_TagString: Spinner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +396,7 @@ AudioSource:
   m_GameObject: {fileID: 8157441076167941365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3716697031394408365, guid: f8c88de0fb19df444bc32d84fc13f560,
+  OutputAudioMixerGroup: {fileID: 3368645189770433064, guid: f8c88de0fb19df444bc32d84fc13f560,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiningSpeed: 200
-  fireRate: 10
+  fireRate: 20
   bulletSpeed: 20
   damage: 30
   bulletsPool: {fileID: 7296928610637776409}

@@ -24,7 +24,12 @@ public class Waver : MonoBehaviour
 
     private void Start()
     {
+        var sameTraps = GameObject.FindGameObjectsWithTag("Waver");
         audioSource = GetComponent<AudioSource>();
+        if (sameTraps.Length > 1)
+        {
+            audioSource.enabled = false;
+        }
         startingAngle = transform.rotation.eulerAngles.z;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }

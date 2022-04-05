@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
-public class Crabulus : MonoBehaviour
+public class Crabulus : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     [SerializeField] float heatlh;
@@ -14,12 +17,15 @@ public class Crabulus : MonoBehaviour
     [SerializeField] GameObject[] normalFirePoints;
     [SerializeField] GameObject rotatingParts;
     [SerializeField] GameObjectsPool bulletsPool;
+    [SerializeField] Slider healtBar;
+    [SerializeField] TMP_Text healthBarText;
     [Space(10)]
     [SerializeField] float wavingPeriod = 10f;
     public float circleAttackDuration;
     public float walkingDuration;
     public float restingDuration;
     public float normalAttackFireRate;
+    float maxHealth;
 
 
     Transform player;
@@ -33,6 +39,10 @@ public class Crabulus : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         timesAttacked = 0;
         rigidbody = GetComponent<Rigidbody2D>();
+        maxHealth = heatlh;
+        healtBar.maxValue = maxHealth;
+        healtBar.value = heatlh;
+        healthBarText.text = heatlh + " / " + maxHealth;  
     }
 
     public void NormalAttack()
@@ -88,4 +98,33 @@ public class Crabulus : MonoBehaviour
         float angle = Mathf.Atan2(destination.y, destination.x) * Mathf.Rad2Deg - 90f;
         rigidbody.rotation = angle;
     }
+
+    public void TakeDamage(float amount)
+    {
+        heatlh -= amount;
+        healtBar.value = heatlh;
+        healthBarText.text = heatlh + " / " + maxHealth;
+
+        if (heatlh <= 0)
+        {
+            HandleDeath();
+        }
+        else
+        {
+
+        }
+        //play sound
+        //update healthbar
+        //
+    }
+
+    private void HandleDeath()
+    {
+        return;
+    }
+}
+
+public interface IDamageable
+{
+    void TakeDamage(float amount);
 }

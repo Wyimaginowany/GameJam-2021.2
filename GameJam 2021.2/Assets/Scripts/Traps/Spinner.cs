@@ -23,7 +23,12 @@ public class Spinner : MonoBehaviour
 
     private void Start()
     {
+        var sameTraps = GameObject.FindGameObjectsWithTag("Spinner");
         audioSource = GetComponent<AudioSource>();
+        if (sameTraps.Length > 1)
+        {
+            audioSource.enabled = false;
+        }
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 

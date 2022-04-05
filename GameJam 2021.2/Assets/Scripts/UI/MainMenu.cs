@@ -11,13 +11,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Slider musicVolumeSlider;
     [SerializeField] Slider buttonVolumeSlider;
     [SerializeField] Slider playerVolumeSlider;
-    [SerializeField] Slider enemyrVolumeSlider;
+    [SerializeField] Slider enemyVolumeSlider;
+    [SerializeField] Slider trapsVolumeSlider;
 
     float masterVolume;
     float musicVolume;
     float buttonVolume;
     float playerVolume;
     float enemyVolume;
+    float trapsVolume;
 
     public void ExitGame()
     {
@@ -35,13 +37,16 @@ public class MainMenu : MonoBehaviour
         musicVolumeSlider.value = musicVolume;
 
         audioMixer.GetFloat("enemy", out enemyVolume);
-        enemyrVolumeSlider.value = enemyVolume;
+        enemyVolumeSlider.value = enemyVolume;
 
         audioMixer.GetFloat("player", out playerVolume);
         playerVolumeSlider.value = playerVolume;
 
         audioMixer.GetFloat("buttons", out buttonVolume);
         buttonVolumeSlider.value = buttonVolume;
+
+        audioMixer.GetFloat("turrets", out trapsVolume);
+        trapsVolumeSlider.value = trapsVolume;
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -72,6 +77,11 @@ public class MainMenu : MonoBehaviour
     public void SetEnemyVolume(float volume)
     {
         audioMixer.SetFloat("enemy", volume);
+    }
+
+    public void SetTrapVolume(float volume)
+    {
+        audioMixer.SetFloat("turrets", volume);
     }
 
     public void ShowCredits()

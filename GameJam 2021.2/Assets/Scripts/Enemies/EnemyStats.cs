@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+public class EnemyStats : MonoBehaviour, IDamageable
 {
     [SerializeField] float enemyHealth = 100f;
 
@@ -20,7 +20,7 @@ public class EnemyStats : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void HandleHit(float damage)
+    public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
         

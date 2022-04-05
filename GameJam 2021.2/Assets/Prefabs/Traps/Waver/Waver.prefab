@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 2966590260594667719}
   m_Layer: 12
   m_Name: Waver
-  m_TagString: Untagged
+  m_TagString: Waver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,11 +253,11 @@ AudioSource:
   m_GameObject: {fileID: 4310899223028015938}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3716697031394408365, guid: f8c88de0fb19df444bc32d84fc13f560,
+  OutputAudioMixerGroup: {fileID: 3368645189770433064, guid: f8c88de0fb19df444bc32d84fc13f560,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.224
   m_Pitch: 1
   Loop: 0
   Mute: 0

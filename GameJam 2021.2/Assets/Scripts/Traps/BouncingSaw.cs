@@ -52,7 +52,7 @@ public class BouncingSaw : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyStats>().HandleHit(damage);
+            collision.gameObject.GetComponent<IDamageable>().TakeDamage(damage);
         }
     }
 
