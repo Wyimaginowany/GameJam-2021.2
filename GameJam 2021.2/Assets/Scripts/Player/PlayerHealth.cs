@@ -80,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
     {
         playerMaxHealth++;
         playerHealth = playerMaxHealth;
+        playerUI.RefreshHealth(playerMaxHealth, playerHealth);
     }
 
     public int GetMaxHealth()

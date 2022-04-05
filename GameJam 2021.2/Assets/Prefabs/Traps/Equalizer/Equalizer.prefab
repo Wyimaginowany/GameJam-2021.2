@@ -256,7 +256,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.247
+  m_Volume: 0.191
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   bulletsPool: {fileID: 1619720732103236236}
   movingParts: {fileID: 6460847992140976739}
   firePoint: {fileID: 214818323978171793}
-  shootSound: {fileID: 8300000, guid: 9d32305348d7a084d87f8083de7e1169, type: 3}
+  shootSound: {fileID: 8300000, guid: 25edf48d3acd0364d9a1181552cfe683, type: 3}
 --- !u!1 &4939731248172691496
 GameObject:
   m_ObjectHideFlags: 0

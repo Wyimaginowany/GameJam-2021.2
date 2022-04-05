@@ -210,7 +210,6 @@ public class ShopLogic : MonoBehaviour
     public void GiveMoneyToPlayer(int amout)
     {
         curretMoneyAmount += amout;
-        Debug.Log(curretMoneyAmount);
         RefreshStats();
     }
 
