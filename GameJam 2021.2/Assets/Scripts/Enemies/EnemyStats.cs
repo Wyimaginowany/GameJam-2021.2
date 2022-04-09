@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
     [SerializeField] AudioClip hitSound;
     [SerializeField] AudioClip deathSound;
 
+    Animator animator;
     AudioSource audioSource;
     Rigidbody2D rigidbody;
     private bool isAlive = true;
@@ -18,6 +19,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
     {
         rigidbody = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(float damage)
@@ -36,13 +38,16 @@ public class EnemyStats : MonoBehaviour, IDamageable
 
     private void HandleDeath()
     {
-        if (deathSound != null)
-        {
-            audioSource.PlayOneShot(deathSound);
-        }
-
         isAlive = false;
         Destroy(rigidbody);
+        animator.SetTrigger("death");
+
+        if (deathSound != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            //audioSource.PlayOneShot(deathSound);
+        }
+
         foreach (CircleCollider2D collider in circleColliders)
         {
             Destroy(collider);
@@ -52,7 +57,11 @@ public class EnemyStats : MonoBehaviour, IDamageable
         {
             deathrattle.Deathrattle();
         }
-        Destroy(gameObject, deathSound.length);
+    }
+
+    private void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 
     public bool CheckIfAlive()

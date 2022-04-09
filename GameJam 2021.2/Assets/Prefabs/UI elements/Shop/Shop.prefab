@@ -1645,7 +1645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4975429707635659796
 Transform:
   m_ObjectHideFlags: 0
@@ -1711,6 +1711,7 @@ MonoBehaviour:
   upgradeTemplates:
   - {fileID: 11400000, guid: 54fa83afa07f31c43ab34bddad95ff7d, type: 2}
   - {fileID: 11400000, guid: 4ec7ca5b2cc407d4293e95a2e078db53, type: 2}
+  - {fileID: 11400000, guid: 282c4841a21bb80408d623bd4b8a8b90, type: 2}
   upgradeRedeemedSlots:
   - {fileID: 6512380821638556787}
   - {fileID: 5098825819782389545}

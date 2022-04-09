@@ -422,7 +422,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb5c9f8ecb95624dbaae6ad48dcd622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: 9405932e4312c0a47943bdf696392572, type: 2}
   hand: {fileID: 1134510421517104040}
   firePoint: {fileID: 8553162649631136260}
   bulletsPool: {fileID: 4536175162186423745}
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibleDuration: 2
-  playerMaxHealth: 5
+  playerMaxHealth: 3
   playerUI: {fileID: 6206995080290736700}
   gameOverUI: {fileID: 0}
   hitSound: {fileID: 8300000, guid: f8aacaf459d60284d81aa7a7ac40629d, type: 3}
@@ -522,7 +522,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.282
   m_Pitch: 1
   Loop: 0
   Mute: 0

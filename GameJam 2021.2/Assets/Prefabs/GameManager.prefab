@@ -149,4 +149,18 @@ MonoBehaviour:
   shopUI: {fileID: 0}
   player: {fileID: 0}
   playerUI: {fileID: 0}
-  gameStages: []
+  winScreen: {fileID: 0}
+  gameStages:
+  - enemySpawners:
+    - {fileID: 0}
+    - {fileID: 0}
+    moneyReward: 60
+  - enemySpawners:
+    - {fileID: 0}
+    - {fileID: 0}
+    moneyReward: 100
+  - enemySpawners:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    moneyReward: 200

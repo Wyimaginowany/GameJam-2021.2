@@ -104,7 +104,6 @@ public class GameManager : MonoBehaviour
         //move player to center
         playerUI.SetActive(false);
         shopUI.SetActive(true);
-        Debug.Log("Current stage :" + currentStage);
         shopUI.GetComponent<ShopLogic>().GiveMoneyToPlayer(gameStages[currentStage].moneyReward);
         shopUI.GetComponent<ShopLogic>().RefreshStats();
     }

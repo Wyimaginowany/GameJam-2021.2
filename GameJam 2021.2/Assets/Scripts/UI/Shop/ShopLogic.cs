@@ -54,7 +54,6 @@ public class ShopLogic : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        //curretMoneyAmount = startingMoneyAmount;
         currentRefreshPrice = refreshPrice;
         refreshPriceText.text = currentRefreshPrice.ToString() + "$";
         DrawRandomShop();
