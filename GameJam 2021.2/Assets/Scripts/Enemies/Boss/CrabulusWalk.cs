@@ -12,7 +12,7 @@ public class CrabulusWalk : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        random = Random.Range(0, 2);
+        random = Random.Range(0, 100);
         crabulusLogic = animator.GetComponent<Crabulus>();
         timer = crabulusLogic.walkingDuration;
     }
@@ -27,7 +27,7 @@ public class CrabulusWalk : StateMachineBehaviour
         else if (timer <= 0)
         {
 
-            if (random == 0)
+            if (random < 50)
             {
                 animator.SetTrigger("normalAttack");
             }
@@ -52,7 +52,7 @@ public class CrabulusWalk : StateMachineBehaviour
             crabulusLogic.timesAttacked = 0;
             animator.ResetTrigger("rest");
         }
-        else if (random == 0)
+        else if (random < 50)
         {
             animator.ResetTrigger("normalAttack");
         }

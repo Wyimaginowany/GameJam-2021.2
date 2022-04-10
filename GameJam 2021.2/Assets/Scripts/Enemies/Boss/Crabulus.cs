@@ -29,6 +29,7 @@ public class Crabulus : MonoBehaviour, IDamageable
     public float normalAttackFireRate;
     float maxHealth;
 
+    bool isDead = false;
     Animator animator;
     Transform player;
     Vector2 destination;
@@ -110,7 +111,7 @@ public class Crabulus : MonoBehaviour, IDamageable
     {
         health -= amount;
 
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             HandleDeath();
             health = 0;
@@ -122,6 +123,7 @@ public class Crabulus : MonoBehaviour, IDamageable
 
     private void HandleDeath()
     {
+        isDead = true;
         animator.SetTrigger("death");
         if (deathSound != null)
         {

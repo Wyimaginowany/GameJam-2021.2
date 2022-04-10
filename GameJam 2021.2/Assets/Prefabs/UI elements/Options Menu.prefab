@@ -867,7 +867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TRAPS
+  m_text: TURRETS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20b7f5dd7101a4b45a6e17fc3cbd1e6c, type: 2}
   m_sharedMaterial: {fileID: -1311124866765207796, guid: 20b7f5dd7101a4b45a6e17fc3cbd1e6c,
