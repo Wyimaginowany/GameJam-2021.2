@@ -29,7 +29,7 @@ public class Crabulus : MonoBehaviour, IDamageable
     public float normalAttackFireRate;
     float maxHealth;
 
-
+    Animator animator;
     Transform player;
     Vector2 destination;
     Rigidbody2D rigidbody;
@@ -40,6 +40,7 @@ public class Crabulus : MonoBehaviour, IDamageable
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        animator = GetComponent<Animator>();
         timesAttacked = 0;
         rigidbody = GetComponent<Rigidbody2D>();
         maxHealth = health;
@@ -121,13 +122,19 @@ public class Crabulus : MonoBehaviour, IDamageable
 
     private void HandleDeath()
     {
+        animator.SetTrigger("death");
         if (deathSound != null)
         {
             audioSource.PlayOneShot(deathSound);
         }
-        Destroy(gameObject, deathSound.length);
+    }
+
+    private void DestroyBoss()
+    {
+        Destroy(gameObject);
     }
 }
+
 
 public interface IDamageable
 {
