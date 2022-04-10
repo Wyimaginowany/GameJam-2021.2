@@ -1007,6 +1007,8 @@ MonoBehaviour:
   - {fileID: 5003486054184423839}
   hitSound: {fileID: 8300000, guid: 7b345bfd58fa2e442b2d10589fa1456e, type: 3}
   deathSound: {fileID: 8300000, guid: a32d42f01c58f8c41b86ccb169e4402a, type: 3}
+  deathParticle: {fileID: 1696049690462840090, guid: 9969555359bc7a14393b6ee4e2116404,
+    type: 3}
 --- !u!114 &5961088221000961960
 MonoBehaviour:
   m_ObjectHideFlags: 0

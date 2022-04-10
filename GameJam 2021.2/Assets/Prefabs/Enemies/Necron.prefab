@@ -721,6 +721,8 @@ MonoBehaviour:
   - {fileID: 7553667717458964729}
   hitSound: {fileID: 8300000, guid: 7b345bfd58fa2e442b2d10589fa1456e, type: 3}
   deathSound: {fileID: 8300000, guid: 14d68cd3a5640ad4e86cd84c011f92f1, type: 3}
+  deathParticle: {fileID: 1696049690462840090, guid: cbda277838cff0a40b13daaacd14fd84,
+    type: 3}
 --- !u!1 &3728377735327563072
 GameObject:
   m_ObjectHideFlags: 0

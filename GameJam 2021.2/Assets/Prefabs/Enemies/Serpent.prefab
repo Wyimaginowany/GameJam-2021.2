@@ -935,3 +935,5 @@ MonoBehaviour:
   - {fileID: 5003486054184423839}
   hitSound: {fileID: 8300000, guid: 7b345bfd58fa2e442b2d10589fa1456e, type: 3}
   deathSound: {fileID: 8300000, guid: abac66ed3827b0246861db2faab7aa8c, type: 3}
+  deathParticle: {fileID: 1696049690462840090, guid: b58fc1bbc59d0724787fd9788ba04aaf,
+    type: 3}

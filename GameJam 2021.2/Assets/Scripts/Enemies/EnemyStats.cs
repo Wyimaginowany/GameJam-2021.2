@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
     [SerializeField] CircleCollider2D[] circleColliders;
     [SerializeField] AudioClip hitSound;
     [SerializeField] AudioClip deathSound;
+    [SerializeField] ParticleSystem deathParticle;
 
     Animator animator;
     AudioSource audioSource;
@@ -39,6 +40,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
     private void HandleDeath()
     {
         isAlive = false;
+        if (deathParticle != null)  Instantiate(deathParticle, transform);
         Destroy(rigidbody);
         animator.SetTrigger("death");
 
