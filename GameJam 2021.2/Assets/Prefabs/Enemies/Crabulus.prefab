@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30000
-  speed: 13
+  speed: 8
   bulletSpeed: 16
   attacksBeforeRest: 3
   firePoint: {fileID: 2856199988181315690}
