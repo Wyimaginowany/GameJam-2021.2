@@ -32,7 +32,7 @@ public class Blaster : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {

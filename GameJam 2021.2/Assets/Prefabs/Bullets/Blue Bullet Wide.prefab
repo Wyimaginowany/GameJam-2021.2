@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6019640233386757355}
   - component: {fileID: 7356838590489310021}
   m_Layer: 8
-  m_Name: Red Bullet Wide
+  m_Name: Blue Bullet Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,12 +48,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Material: {fileID: 6200000, guid: 62dda36512d3e904db093120c8a7eeee, type: 2}
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &6019640233386757355
 CircleCollider2D:

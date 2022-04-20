@@ -41,9 +41,17 @@ public class Waver : MonoBehaviour
         if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {
             Wave();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (gameManager.GetCurrentState() == GameState.CombatPhase)
+        {
             Shoot();
         }
     }
+
 
     private void Shoot()
     {

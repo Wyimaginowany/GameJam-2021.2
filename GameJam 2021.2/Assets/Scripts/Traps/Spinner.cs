@@ -39,6 +39,13 @@ public class Spinner : MonoBehaviour
         if (gameManager.GetCurrentState() == GameState.CombatPhase)
         {
             movingParts.transform.Rotate(new Vector3(0f, 0f, spiningSpeed) * Time.deltaTime);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (gameManager.GetCurrentState() == GameState.CombatPhase)
+        {
             Shoot();
         }
     }

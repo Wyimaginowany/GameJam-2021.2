@@ -52,13 +52,7 @@ public class PlayerInput : MonoBehaviour
             }
         }*/
 
-        if (gameManager.GetCurrentState() == GameState.CombatPhase)
-        {
-            if (Input.GetMouseButton(0) && !isPaused)
-            {
-                playerShooting.Shoot();
-            }
-        }
+
         else if (gameManager.GetCurrentState() == GameState.BuildPhase && !isPaused)
         {
             if (selectedTrap != null)
@@ -83,6 +77,10 @@ public class PlayerInput : MonoBehaviour
         {
             ApplyPlayerMovement();
             playerMovement.RotatePlayer(mousePosition);
+            if (Input.GetMouseButton(0) && !isPaused)
+            {
+                playerShooting.Shoot();
+            }
         }
     }
 

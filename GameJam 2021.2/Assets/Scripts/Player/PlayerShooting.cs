@@ -13,12 +13,14 @@ public class PlayerShooting : MonoBehaviour
     private float damageUpgrade = 0;
     private float fireRateUpgrade = 0;
 
+    Animator animator;
     PlayerHealth playerHealth;
     float lastFired = 0f;
     AudioSource audioSource;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         weapon.SpawnWeapon(hand);
         playerHealth = GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
@@ -28,6 +30,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (Time.time - lastFired > 1 / (weapon.fireRate + fireRateUpgrade))
         {
+            animator.SetTrigger("shoot");
             lastFired = Time.time;
             var bullet = bulletsPool.GetBullet();
             bullet.GetComponent<Bullet>().SetBulletDamage(weapon.damage + damageUpgrade);
