@@ -5242,6 +5242,21 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.85714287
       objectReference: {fileID: 0}
+    - target: {fileID: 6539579730318933804, guid: 72ed846d32ff929459ac095498a8d998,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539579730318933804, guid: 72ed846d32ff929459ac095498a8d998,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2138770460}
+    - target: {fileID: 6539579730318933804, guid: 72ed846d32ff929459ac095498a8d998,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetFullscreen
+      objectReference: {fileID: 0}
     - target: {fileID: 6648901069459754295, guid: 72ed846d32ff929459ac095498a8d998,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7003,7 +7018,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

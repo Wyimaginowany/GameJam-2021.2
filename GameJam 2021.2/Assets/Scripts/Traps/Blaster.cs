@@ -45,7 +45,7 @@ public class Blaster : MonoBehaviour
         if (Time.time - lastFired > 1 / fireRate)
         {
             animator.SetTrigger("shoot");
-            random = Random.Range(0, 2);
+            random = Random.Range(0, 3);
             Debug.Log(random);
             audioSource.PlayOneShot(shootSound);
             lastFired = Time.time;
