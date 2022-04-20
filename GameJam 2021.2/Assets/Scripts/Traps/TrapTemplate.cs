@@ -9,6 +9,7 @@ public class TrapTemplate : MonoBehaviour
     public bool isPlaceable = true;
     [SerializeField] LayerMask trapsLayer;
     [SerializeField] int trapPrice = 50;
+
     public string firstLine;
     public string secondLine;
     public string trapDescription;

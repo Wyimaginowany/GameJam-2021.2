@@ -17,6 +17,7 @@ public class Waver : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] AudioClip shootSound;
 
+    Animator animator;
     AudioSource audioSource;
     GameManager gameManager;
     float lastFired = 0f;
@@ -26,6 +27,7 @@ public class Waver : MonoBehaviour
     {
         var sameTraps = GameObject.FindGameObjectsWithTag("Waver");
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
         if (sameTraps.Length > 1)
         {
             audioSource.enabled = false;
@@ -47,6 +49,7 @@ public class Waver : MonoBehaviour
     {
         if (Time.time - lastFired > 1 / fireRate)
         {
+            animator.SetTrigger("shoot");
             audioSource.PlayOneShot(shootSound);
             lastFired = Time.time;
             var bullet = bulletsPool.GetBullet();

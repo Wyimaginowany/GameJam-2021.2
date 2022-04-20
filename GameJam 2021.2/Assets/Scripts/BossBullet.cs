@@ -27,6 +27,8 @@ public class BossBullet : MonoBehaviour, IGameObjectPolled
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamege();
         }
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        GetComponent<Rigidbody2D>().angularVelocity = 0;
         pool.ReturnToPool(this.gameObject);
     }
 

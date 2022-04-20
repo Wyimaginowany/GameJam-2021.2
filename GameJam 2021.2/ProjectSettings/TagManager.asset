@@ -12,6 +12,7 @@ TagManager:
   - Equalizer
   - Waver
   - Spinner
+  - Blaster
   layers:
   - Default
   - TransparentFX

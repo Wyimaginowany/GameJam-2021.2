@@ -15,6 +15,7 @@ public class Equalizer : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] AudioClip shootSound;
 
+    Animator animator;
     AudioSource audioSource;
     GameManager gameManager;
     GameObject player;
@@ -25,6 +26,7 @@ public class Equalizer : MonoBehaviour
     {
         var sameTraps = GameObject.FindGameObjectsWithTag("Equalizer");
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
         if (sameTraps.Length > 1)
         {
             audioSource.enabled = false;
@@ -53,6 +55,7 @@ public class Equalizer : MonoBehaviour
     {
         if (Time.time - lastFired > 1 / fireRate)
         {
+            animator.SetTrigger("shoot");
             audioSource.PlayOneShot(shootSound);
             lastFired = Time.time;
             var bullet = bulletsPool.GetBullet();

@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 1022875170597185624}
   - component: {fileID: 4027096409108289385}
   - component: {fileID: 7415679875126244213}
+  - component: {fileID: 1120537149970407146}
   m_Layer: 12
   m_Name: Equalizer
   m_TagString: Equalizer
@@ -375,6 +376,25 @@ MonoBehaviour:
   movingParts: {fileID: 6460847992140976739}
   firePoint: {fileID: 214818323978171793}
   shootSound: {fileID: 8300000, guid: 25edf48d3acd0364d9a1181552cfe683, type: 3}
+--- !u!95 &1120537149970407146
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634451948489922851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef620220b4f261a4b9243fd8ee95cad8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4939731248172691496
 GameObject:
   m_ObjectHideFlags: 0

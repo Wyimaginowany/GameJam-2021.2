@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 9148427723540805215}
   - component: {fileID: 8474107027430684881}
   - component: {fileID: 2966590260594667719}
+  - component: {fileID: 3914860680799985689}
   m_Layer: 12
   m_Name: Waver
   m_TagString: Waver
@@ -378,6 +379,25 @@ MonoBehaviour:
   movingParts: {fileID: 6817561343497894552}
   firePoint: {fileID: 8033825766389169146}
   shootSound: {fileID: 8300000, guid: 3455c5a73da8f1c40a69b701492cfdbf, type: 3}
+--- !u!95 &3914860680799985689
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310899223028015938}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c610e67c62e22e34bb21e51c64cf75d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5092631547865299995
 GameObject:
   m_ObjectHideFlags: 0
