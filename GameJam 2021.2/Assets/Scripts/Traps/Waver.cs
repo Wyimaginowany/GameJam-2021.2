@@ -66,6 +66,8 @@ public class Waver : MonoBehaviour
             bullet.transform.position = firePoint.transform.position;
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            bulletRigidbody.velocity = Vector3.zero;
+            bulletRigidbody.angularVelocity = 0;
             bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }
     }

@@ -38,6 +38,8 @@ public class PlayerShooting : MonoBehaviour
             bullet.transform.position = firePoint.transform.position;
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            bulletRigidbody.velocity = Vector3.zero;
+            bulletRigidbody.angularVelocity = 0;
             bulletRigidbody.AddForce(firePoint.transform.up * weapon.bulletSpeed, ForceMode2D.Impulse);
             audioSource.PlayOneShot(weapon.shootSound);
         }     

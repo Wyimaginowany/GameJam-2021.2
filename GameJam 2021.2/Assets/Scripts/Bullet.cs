@@ -30,8 +30,6 @@ public class Bullet : MonoBehaviour, IGameObjectPolled
         {
             collision.GetComponent<IDamageable>().TakeDamage(damage);
         }
-        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        GetComponent<Rigidbody2D>().angularVelocity = 0;
         pool.ReturnToPool(this.gameObject);
     }
 

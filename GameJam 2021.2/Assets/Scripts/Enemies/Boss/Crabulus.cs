@@ -61,6 +61,8 @@ public class Crabulus : MonoBehaviour, IDamageable
             bullet.transform.position = firePoint.transform.position;
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            bulletRigidbody.velocity = Vector3.zero;
+            bulletRigidbody.angularVelocity = 0;
             bulletRigidbody.AddForce(firePoint.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }
     }
@@ -75,6 +77,8 @@ public class Crabulus : MonoBehaviour, IDamageable
             bullet.transform.rotation = firePoint.transform.rotation * Quaternion.Euler(0f, 0f, i*22.5f);
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            bulletRigidbody.velocity = Vector3.zero;
+            bulletRigidbody.angularVelocity = 0;
             bulletRigidbody.AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }
     }
@@ -116,9 +120,12 @@ public class Crabulus : MonoBehaviour, IDamageable
             HandleDeath();
             health = 0;
         }
-
-        healtBar.value = health;
-        healthBarText.text = health + " / " + maxHealth;
+        else
+        {
+            animator.SetTrigger("hit");
+            healtBar.value = health;
+            healthBarText.text = health + " / " + maxHealth;
+        }
     }
 
     private void HandleDeath()

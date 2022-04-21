@@ -46,7 +46,6 @@ public class Blaster : MonoBehaviour
         {
             animator.SetTrigger("shoot");
             random = Random.Range(0, 3);
-            Debug.Log(random);
             audioSource.PlayOneShot(shootSound);
             lastFired = Time.time;
             var bullet = bulletsPool.GetBullet();
@@ -55,6 +54,8 @@ public class Blaster : MonoBehaviour
             bullet.transform.position = firePoints[random].transform.position;
             bullet.gameObject.SetActive(true);
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+            bulletRigidbody.velocity = Vector3.zero;
+            bulletRigidbody.angularVelocity = 0;
             bulletRigidbody.AddForce(firePoints[random].transform.up * bulletSpeed, ForceMode2D.Impulse);
 
         }

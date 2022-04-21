@@ -33,6 +33,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
         }
         else if (hitSound != null)
         {
+            animator.SetTrigger("hit");
             audioSource.PlayOneShot(hitSound);
         }
     }
