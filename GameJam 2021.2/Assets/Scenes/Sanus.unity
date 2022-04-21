@@ -608,8 +608,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48292481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 18.75209, z: 1}
+  m_LocalPosition: {x: -51.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 20.392899, z: 1}
   m_Children: []
   m_Father: {fileID: 1935781304}
   m_RootOrder: 0
@@ -2171,8 +2171,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245452480}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 28.6, z: 0}
-  m_LocalScale: {x: 1, y: 32.960003, z: 1}
+  m_LocalPosition: {x: 0, y: 30.4, z: 0}
+  m_LocalScale: {x: 1, y: 35.432003, z: 1}
   m_Children: []
   m_Father: {fileID: 1935781304}
   m_RootOrder: 2
@@ -4253,8 +4253,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600625635}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -28.61, z: 0}
-  m_LocalScale: {x: 1, y: 32.960003, z: 1}
+  m_LocalPosition: {x: 0, y: -31.2, z: 0}
+  m_LocalScale: {x: 1, y: 35.432003, z: 1}
   m_Children: []
   m_Father: {fileID: 1935781304}
   m_RootOrder: 3
@@ -5570,6 +5570,7 @@ GameObject:
   - component: {fileID: 850789109}
   - component: {fileID: 850789108}
   - component: {fileID: 850789107}
+  - component: {fileID: 850789110}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5642,6 +5643,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &850789110
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850789106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f77d0fc8eb019fa4d95bf4b621d60515, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &865495053
 GameObject:
   m_ObjectHideFlags: 0
@@ -11307,8 +11327,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651227921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 18.752087, z: 1}
+  m_LocalPosition: {x: 51.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 20.392893, z: 1}
   m_Children: []
   m_Father: {fileID: 1935781304}
   m_RootOrder: 1
@@ -11587,6 +11607,11 @@ PrefabInstance:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 194092281}
+    - target: {fileID: 53133104252205515, guid: 0d2bec6562de3704f8d0d81eae9f6613,
+        type: 3}
+      propertyPath: cameraAnimatior
+      value: 
+      objectReference: {fileID: 850789110}
     - target: {fileID: 53133104252205515, guid: 0d2bec6562de3704f8d0d81eae9f6613,
         type: 3}
       propertyPath: playerMaxHealth

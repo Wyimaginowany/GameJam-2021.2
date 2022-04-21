@@ -120,12 +120,14 @@ public class Crabulus : MonoBehaviour, IDamageable
             HandleDeath();
             health = 0;
         }
-        else
+        else if (health < 0)
         {
-            animator.SetTrigger("hit");
-            healtBar.value = health;
-            healthBarText.text = health + " / " + maxHealth;
+            health = 0;
         }
+
+        animator.SetTrigger("hit");
+        healtBar.value = health;
+        healthBarText.text = health + " / " + maxHealth;
     }
 
     private void HandleDeath()

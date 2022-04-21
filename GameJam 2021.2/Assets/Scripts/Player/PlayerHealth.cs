@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] PlayerUI playerUI;
     [SerializeField] GameObject gameOverUI;
     [SerializeField] AudioClip hitSound;
+    [SerializeField] Animator cameraAnimatior;
 
     GameManager gameManager;
     AudioSource audioSource;
@@ -44,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!invincible)
         {
+
             audioSource.PlayOneShot(hitSound);
             playerHealth--;
             playerUI.RefreshHealth(playerMaxHealth, playerHealth);
@@ -55,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
             else
             {
                 Invoke("ActiveCollider", invincibleDuration);
+                cameraAnimatior.SetTrigger("hit");
                 //make it so the player can see that he is invincible
                 //turn off collider for invincibleDuration
             }

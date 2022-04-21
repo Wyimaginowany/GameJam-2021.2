@@ -44,15 +44,6 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
-        /*if (gameManager.GetCurrentState() == GameState.WaitingPhase)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                gameManager.SetState(GameState.CombatPhase);
-            }
-        }*/
-
-
         else if (gameManager.GetCurrentState() == GameState.BuildPhase && !isPaused)
         {
             if (selectedTrap != null)
